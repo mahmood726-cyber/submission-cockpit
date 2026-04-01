@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SubmissionCockpit</title>
+  <style>
+    :root {
+      --paper: #f4ecdf;
+      --ink: #122620;
+      --muted: #5c695f;
+      --accent: #b34b2d;
+      --accent-soft: #ebc59a;
+      --forest: #204436;
+      --card: rgba(255, 251, 245, 0.86);
+      --line: rgba(18, 38, 32, 0.12);
+      --shadow: 0 18px 40px rgba(18, 38, 32, 0.12);
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --sans: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(235, 197, 154, 0.45), transparent 36%),
+        radial-gradient(circle at top right, rgba(179, 75, 45, 0.18), transparent 28%),
+        linear-gradient(180deg, #fbf6ed 0%, var(--paper) 52%, #efe2ce 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--forest);
+    }
+
+    .shell {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 40px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(18, 38, 32, 0.1);
+      border-radius: 28px;
+      padding: 30px 28px 26px;
+      background:
+        linear-gradient(140deg, rgba(32, 68, 54, 0.94), rgba(27, 49, 42, 0.9)),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent);
+      color: #f8f1e7;
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -100px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(235, 197, 154, 0.38), transparent 72%);
+      transform: rotate(12deg);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(244, 236, 223, 0.12);
+      border: 1px solid rgba(244, 236, 223, 0.18);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    h1,
+    h2 {
+      font-family: var(--serif);
+      line-height: 1.02;
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(38px, 7vw, 68px);
+      max-width: 12ch;
+    }
+
+    .lede {
+      margin: 16px 0 0;
+      max-width: 68ch;
+      color: rgba(248, 241, 231, 0.88);
+      font-size: 16px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+      font-size: 14px;
+      color: rgba(248, 241, 231, 0.82);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .metrics {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .metric,
+    .panel {
+      background: var(--card);
+      backdrop-filter: blur(6px);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .metric {
+      padding: 18px 18px 16px;
+    }
+
+    .metric-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .metric-value {
+      margin-top: 8px;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--forest);
+    }
+
+    .metric-note {
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .two-up {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+
+    .panel {
+      padding: 20px;
+    }
+
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .panel h2 {
+      font-size: 26px;
+      color: var(--forest);
+    }
+
+    .panel-subtle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .queue-list,
+    .blocker-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .queue-item,
+    .project-row {
+      padding: 14px 15px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .queue-name,
+    .project-name {
+      font-weight: 700;
+    }
+
+    .queue-meta,
+    .project-meta {
+      margin-top: 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: rgba(32, 68, 54, 0.08);
+      color: var(--forest);
+      border: 1px solid rgba(32, 68, 54, 0.12);
+    }
+
+    .badge.warn {
+      background: rgba(179, 75, 45, 0.12);
+      color: #7a2f1a;
+      border-color: rgba(179, 75, 45, 0.18);
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .filters input,
+    .filters select {
+      flex: 1 1 220px;
+      min-width: 0;
+      border: 1px solid rgba(18, 38, 32, 0.16);
+      background: rgba(255, 255, 255, 0.82);
+      border-radius: 12px;
+      padding: 11px 12px;
+      font: inherit;
+      color: var(--ink);
+    }
+
+    .projects {
+      display: grid;
+      gap: 12px;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .project-score {
+      min-width: 68px;
+      text-align: center;
+      padding: 10px 8px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(32, 68, 54, 0.92), rgba(18, 38, 32, 0.92));
+      color: #f6efe5;
+    }
+
+    .project-score strong {
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .empty {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(100% - 20px, 1200px);
+      }
+
+      .hero,
+      .panel,
+      .metric {
+        border-radius: 20px;
+      }
+
+      .project-top {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <section class="hero">
+      <div class="eyebrow">E156 Editorial Release Console</div>
+      <h1>SubmissionCockpit</h1>
+      <p class="lede" id="hero-summary">Loading publication ledger...</p>
+      <div class="hero-meta" id="hero-meta"></div>
+    </section>
+
+    <section class="grid metrics" id="metrics"></section>
+
+    <section class="grid two-up">
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Rewrite Queue</h2>
+          <div class="panel-subtle" id="rewrite-count"></div>
+        </div>
+        <div class="queue-list" id="rewrite-queue"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Blockers</h2>
+          <div class="panel-subtle">Most common next constraints</div>
+        </div>
+        <div class="blocker-list" id="blockers"></div>
+      </article>
+    </section>
+
+    <section class="grid two-up">
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Release Queue</h2>
+          <div class="panel-subtle">GitHub, Pages, and PDF work</div>
+        </div>
+        <div class="queue-list" id="release-queue"></div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-head">
+          <h2>Synthesis Queue</h2>
+          <div class="panel-subtle">Future editorial upload handoff</div>
+        </div>
+        <div class="queue-list" id="synthesis-queue"></div>
+      </article>
+    </section>
+
+    <section class="panel" style="margin-top:22px;">
+      <div class="panel-head">
+        <h2>Project Ledger</h2>
+        <div class="panel-subtle" id="project-count"></div>
+      </div>
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search project, slug, journal, blocker, or note">
+        <select id="stage-filter">
+          <option value="">All stages</option>
+        </select>
+        <select id="priority-filter">
+          <option value="">All priorities</option>
+        </select>
+      </div>
+      <div class="projects" id="projects"></div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    const DATA = window.SUBMISSION_COCKPIT_DATA;
+
+    function metric(label, value, note) {
+      return `<div class="metric"><div class="metric-label">${label}</div><div class="metric-value">${value}</div><div class="metric-note">${note || ""}</div></div>`;
+    }
+
+    function badges(items, warn = false) {
+      return (items || []).map((item) => `<span class="badge${warn ? " warn" : ""}">${item}</span>`).join("");
+    }
+
+    function queueCard(item) {
+      const blocker = item.blockers && item.blockers.length ? item.blockers[0] : "No current blocker";
+      return `
+        <div class="queue-item">
+          <div class="queue-name">${item.name}</div>
+          <div class="queue-meta">${item.pipelineStage} · ${item.portfolioPriority} priority · score ${item.publicationScore}</div>
+          <div class="badge-row">${badges([item.rewriteStatus, item.e156BodyStatus, item.protocolStatus, item.pagesStatus])}</div>
+          <div class="queue-meta" style="margin-top:10px;">${blocker}</div>
+        </div>
+      `;
+    }
+
+    function projectRow(item) {
+      const links = [];
+      if (item.recordUrl) links.push(`<a href="${item.recordUrl}" target="_blank" rel="noreferrer">catalog</a>`);
+      if (item.githubRepoUrl) links.push(`<a href="${item.githubRepoUrl}" target="_blank" rel="noreferrer">repo</a>`);
+      if (item.githubPagesUrl) links.push(`<a href="${item.githubPagesUrl}" target="_blank" rel="noreferrer">pages</a>`);
+      if (item.synthesisArticleUrl) links.push(`<a href="${item.synthesisArticleUrl}" target="_blank" rel="noreferrer">synthesis</a>`);
+
+      return `
+        <div class="project-row">
+          <div class="project-top">
+            <div>
+              <div class="project-name">${item.name}</div>
+              <div class="project-meta">${item.slug} · ${item.tier} · ${item.resolvedStatus} · ${item.portfolioPriority} priority</div>
+              <div class="project-meta">${item.targetJournal || "No target journal recorded"}</div>
+              <div class="badge-row">${badges([
+                item.pipelineStage,
+                `rewrite:${item.rewriteStatus}`,
+                `paper:${item.e156BodyStatus}`,
+                `protocol:${item.protocolStatus}`,
+                `dashboard:${item.dashboardStatus}`,
+                `github:${item.githubStatus}`,
+                `pages:${item.pagesStatus}`
+              ])}</div>
+              <div class="badge-row">${badges((item.blockers || []).slice(0, 3), true)}</div>
+              <div class="project-meta" style="margin-top:10px;">${links.join(" · ") || "No external links recorded yet"}</div>
+            </div>
+            <div class="project-score">
+              <strong>${item.publicationScore}</strong>
+              <span>score</span>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function uniqueSorted(values) {
+      return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
+    }
+
+    function fillSelect(select, values) {
+      values.forEach((value) => {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = value;
+        select.appendChild(option);
+      });
+    }
+
+    function renderProjects(list) {
+      const target = document.getElementById("projects");
+      const count = document.getElementById("project-count");
+      count.textContent = `${list.length} visible of ${DATA.projects.length} tracked projects`;
+      target.innerHTML = list.length ? list.map(projectRow).join("") : `<div class="empty">No projects match the current filters.</div>`;
+    }
+
+    function applyFilters() {
+      const search = document.getElementById("search").value.trim().toLowerCase();
+      const stage = document.getElementById("stage-filter").value;
+      const priority = document.getElementById("priority-filter").value;
+
+      const filtered = DATA.projects.filter((item) => {
+        if (stage && item.pipelineStage !== stage) return false;
+        if (priority && item.portfolioPriority !== priority) return false;
+        if (!search) return true;
+        const haystack = [
+          item.name,
+          item.slug,
+          item.targetJournal,
+          item.rewriteStatus,
+          item.pipelineStage,
+          item.notes,
+          ...(item.blockers || [])
+        ].join(" ").toLowerCase();
+        return haystack.includes(search);
+      });
+
+      renderProjects(filtered);
+    }
+
+    function main() {
+      if (!DATA) {
+        document.getElementById("hero-summary").textContent = "Dashboard payload missing.";
+        return;
+      }
+
+      document.getElementById("hero-summary").textContent = DATA.project.summary;
+      document.getElementById("hero-meta").innerHTML = `
+        <span>Generated ${DATA.project.generatedAt}</span>
+        <span>Rewrite source: ${DATA.project.externalRewriteSource || "n/a"}</span>
+        <span>Workbook: ${DATA.project.trackerWorkbook}</span>
+        <span>CSV mirror: ${DATA.project.trackerCsv}</span>
+        <span>E156 maintenance: ${DATA.externalE156 && DATA.externalE156.maintenanceOverallOk === true ? "ok" : DATA.externalE156 && DATA.externalE156.maintenanceOverallOk === false ? "needs attention" : "unknown"}</span>
+      `;
+
+      document.getElementById("metrics").innerHTML = [
+        metric("Tracked Projects", DATA.metrics.trackedProjects, "Current publication ledger scope"),
+        metric("Publish Now", DATA.metrics.publishNowCount, "Projects currently marked for editorial conversion"),
+        metric("Rewritten", DATA.metrics.rewrittenCount, "Rows marked rewritten or approved"),
+        metric("Ready For GitHub", DATA.metrics.readyForGitHubCount, "Packaging is complete, repo push remains"),
+        metric("Ready For Pages", DATA.metrics.readyForPagesCount, "GitHub is ready, Pages remains"),
+        metric("Ready For Synthesis", DATA.metrics.readyForSynthesisCount, "PDF ready, journal upload still open")
+      ].join("");
+
+      document.getElementById("rewrite-count").textContent = `${DATA.rewriteQueue.length} queued`;
+      document.getElementById("rewrite-queue").innerHTML = DATA.rewriteQueue.length
+        ? DATA.rewriteQueue.slice(0, 8).map(queueCard).join("")
+        : `<div class="empty">No rewrite queue items right now.</div>`;
+
+      document.getElementById("release-queue").innerHTML = DATA.releaseQueue.length
+        ? DATA.releaseQueue.slice(0, 8).map(queueCard).join("")
+        : `<div class="empty">No release blockers currently mapped.</div>`;
+
+      document.getElementById("synthesis-queue").innerHTML = DATA.synthesisQueue.length
+        ? DATA.synthesisQueue.slice(0, 8).map(queueCard).join("")
+        : `<div class="empty">No Synthesis handoff items currently ready.</div>`;
+
+      document.getElementById("blockers").innerHTML = DATA.topBlockers.length
+        ? DATA.topBlockers.map((item) => `
+            <div class="queue-item">
+              <div class="queue-name">${item.blocker}</div>
+              <div class="queue-meta">${item.count} projects</div>
+            </div>
+          `).join("")
+        : `<div class="empty">No blocker breakdown available.</div>`;
+
+      fillSelect(document.getElementById("stage-filter"), uniqueSorted(DATA.projects.map((item) => item.pipelineStage)));
+      fillSelect(document.getElementById("priority-filter"), uniqueSorted(DATA.projects.map((item) => item.portfolioPriority)));
+
+      document.getElementById("search").addEventListener("input", applyFilters);
+      document.getElementById("stage-filter").addEventListener("change", applyFilters);
+      document.getElementById("priority-filter").addEventListener("change", applyFilters);
+
+      renderProjects(DATA.projects);
+    }
+
+    main();
+  </script>
+</body>
+</html>

@@ -1,0 +1,486 @@
+{
+  "overall_ok": true,
+  "local_e156_tests": {
+    "ok": true,
+    "returncode": 0,
+    "command": [
+      "pytest",
+      "-q",
+      "-p",
+      "no:cacheprovider",
+      "/mnt/c/E156/tests/test_smoke.py"
+    ],
+    "cwd": "/mnt/c/E156",
+    "stdout": "........................                                                 [100%]\n24 passed in 0.59s\n",
+    "stderr": "",
+    "target": "/mnt/c/E156/tests/test_smoke.py",
+    "started_at": "2026-03-30T12:34:42.682827Z",
+    "duration_seconds": 0.87
+  },
+  "generated_smoke_tests": {
+    "total": 45,
+    "passed": 45,
+    "failed": 0,
+    "results": [
+      {
+        "repo": "/mnt/c/AfricaRCT",
+        "test_file": "/mnt/c/AfricaRCT/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.90s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:44.300699Z",
+        "duration_seconds": 1.331
+      },
+      {
+        "repo": "/mnt/c/BenfordMA",
+        "test_file": "/mnt/c/BenfordMA/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.12s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:44.301337Z",
+        "duration_seconds": 0.502
+      },
+      {
+        "repo": "/mnt/c/HTML apps/NMAhtml",
+        "test_file": "/mnt/c/HTML apps/NMAhtml/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.40s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:44.302976Z",
+        "duration_seconds": 0.773
+      },
+      {
+        "repo": "/mnt/c/HTML apps/evidence-board",
+        "test_file": "/mnt/c/HTML apps/evidence-board/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.10s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:44.304202Z",
+        "duration_seconds": 0.463
+      },
+      {
+        "repo": "/mnt/c/HTML apps/focus-studio",
+        "test_file": "/mnt/c/HTML apps/focus-studio/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.09s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:44.767736Z",
+        "duration_seconds": 0.489
+      },
+      {
+        "repo": "/mnt/c/HTML apps/kanban-lab",
+        "test_file": "/mnt/c/HTML apps/kanban-lab/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.09s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:44.803054Z",
+        "duration_seconds": 0.474
+      },
+      {
+        "repo": "/mnt/c/MetaFolio",
+        "test_file": "/mnt/c/MetaFolio/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.12s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:45.076600Z",
+        "duration_seconds": 0.604
+      },
+      {
+        "repo": "/mnt/c/MetaShift",
+        "test_file": "/mnt/c/MetaShift/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.23s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:45.257264Z",
+        "duration_seconds": 0.657
+      },
+      {
+        "repo": "/mnt/c/Models/ConformalMA",
+        "test_file": "/mnt/c/Models/ConformalMA/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.22s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:45.277199Z",
+        "duration_seconds": 0.634
+      },
+      {
+        "repo": "/mnt/c/Models/EvidenceTribunal",
+        "test_file": "/mnt/c/Models/EvidenceTribunal/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.12s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:45.631634Z",
+        "duration_seconds": 0.598
+      },
+      {
+        "repo": "/mnt/c/Models/MAWorkbench",
+        "test_file": "/mnt/c/Models/MAWorkbench/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.12s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:45.680632Z",
+        "duration_seconds": 0.568
+      },
+      {
+        "repo": "/mnt/c/Models/MetaGenome",
+        "test_file": "/mnt/c/Models/MetaGenome/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.11s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:45.911161Z",
+        "duration_seconds": 0.523
+      },
+      {
+        "repo": "/mnt/c/Models/MethodsSuite",
+        "test_file": "/mnt/c/Models/MethodsSuite/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.11s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:45.914504Z",
+        "duration_seconds": 0.542
+      },
+      {
+        "repo": "/mnt/c/Models/ROBMA",
+        "test_file": "/mnt/c/Models/ROBMA/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.14s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:46.229571Z",
+        "duration_seconds": 0.562
+      },
+      {
+        "repo": "/mnt/c/Models/SheafNMA",
+        "test_file": "/mnt/c/Models/SheafNMA/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.11s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:46.248554Z",
+        "duration_seconds": 0.506
+      },
+      {
+        "repo": "/mnt/c/Models/TDA_MA",
+        "test_file": "/mnt/c/Models/TDA_MA/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.11s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:46.434019Z",
+        "duration_seconds": 0.513
+      },
+      {
+        "repo": "/mnt/c/Models/Value_Based_HTA_Engine",
+        "test_file": "/mnt/c/Models/Value_Based_HTA_Engine/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.17s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:46.456521Z",
+        "duration_seconds": 0.542
+      },
+      {
+        "repo": "/mnt/c/Projects/501MLM",
+        "test_file": "/mnt/c/Projects/501MLM/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.18s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:46.754341Z",
+        "duration_seconds": 0.576
+      },
+      {
+        "repo": "/mnt/c/Projects/AutoGRADE",
+        "test_file": "/mnt/c/Projects/AutoGRADE/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.11s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:46.791897Z",
+        "duration_seconds": 0.521
+      },
+      {
+        "repo": "/mnt/c/Projects/Burhan",
+        "test_file": "/mnt/c/Projects/Burhan/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.18s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:46.947138Z",
+        "duration_seconds": 0.596
+      },
+      {
+        "repo": "/mnt/c/Projects/DTA70",
+        "test_file": "/mnt/c/Projects/DTA70/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.33s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:46.998546Z",
+        "duration_seconds": 0.733
+      },
+      {
+        "repo": "/mnt/c/Projects/MLM501",
+        "test_file": "/mnt/c/Projects/MLM501/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.14s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:47.312627Z",
+        "duration_seconds": 0.583
+      },
+      {
+        "repo": "/mnt/c/Projects/MetaExtract",
+        "test_file": "/mnt/c/Projects/MetaExtract/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.10s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:47.330339Z",
+        "duration_seconds": 0.547
+      },
+      {
+        "repo": "/mnt/c/Projects/Multipledatameta",
+        "test_file": "/mnt/c/Projects/Multipledatameta/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.12s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:47.543457Z",
+        "duration_seconds": 0.52
+      },
+      {
+        "repo": "/mnt/c/Projects/TrialRadar",
+        "test_file": "/mnt/c/Projects/TrialRadar/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.11s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:47.731874Z",
+        "duration_seconds": 0.536
+      },
+      {
+        "repo": "/mnt/c/Projects/WorldIPD",
+        "test_file": "/mnt/c/Projects/WorldIPD/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.18s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:47.877946Z",
+        "duration_seconds": 0.612
+      },
+      {
+        "repo": "/mnt/c/Projects/WorldIPD-private",
+        "test_file": "/mnt/c/Projects/WorldIPD-private/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.12s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:47.895444Z",
+        "duration_seconds": 0.564
+      },
+      {
+        "repo": "/mnt/c/Projects/cardio-ctgov-living-meta-portfolio",
+        "test_file": "/mnt/c/Projects/cardio-ctgov-living-meta-portfolio/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.13s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:48.063347Z",
+        "duration_seconds": 0.569
+      },
+      {
+        "repo": "/mnt/c/Projects/chatpaper",
+        "test_file": "/mnt/c/Projects/chatpaper/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.16s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:48.268203Z",
+        "duration_seconds": 0.614
+      },
+      {
+        "repo": "/mnt/c/Projects/claude2",
+        "test_file": "/mnt/c/Projects/claude2/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.18s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:48.459288Z",
+        "duration_seconds": 0.616
+      },
+      {
+        "repo": "/mnt/c/Projects/clinic-site",
+        "test_file": "/mnt/c/Projects/clinic-site/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.15s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:48.490511Z",
+        "duration_seconds": 0.603
+      },
+      {
+        "repo": "/mnt/c/Projects/ctgov-hiddenness-atlas",
+        "test_file": "/mnt/c/Projects/ctgov-hiddenness-atlas/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.14s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:48.632828Z",
+        "duration_seconds": 0.559
+      },
+      {
+        "repo": "/mnt/c/Projects/esc-acs-living-meta",
+        "test_file": "/mnt/c/Projects/esc-acs-living-meta/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.26s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:48.882393Z",
+        "duration_seconds": 0.672
+      },
+      {
+        "repo": "/mnt/c/Projects/living-meta-engine",
+        "test_file": "/mnt/c/Projects/living-meta-engine/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.11s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:49.075825Z",
+        "duration_seconds": 0.537
+      },
+      {
+        "repo": "/mnt/c/Projects/llm-meta-analysis",
+        "test_file": "/mnt/c/Projects/llm-meta-analysis/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:49.093228Z",
+        "duration_seconds": 0.56
+      },
+      {
+        "repo": "/mnt/c/Projects/meta-epidemiology-bias-correction",
+        "test_file": "/mnt/c/Projects/meta-epidemiology-bias-correction/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.13s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:49.192120Z",
+        "duration_seconds": 0.532
+      },
+      {
+        "repo": "/mnt/c/Projects/metasprint-cardio-universe",
+        "test_file": "/mnt/c/Projects/metasprint-cardio-universe/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.21s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:49.554774Z",
+        "duration_seconds": 0.606
+      },
+      {
+        "repo": "/mnt/c/Projects/portfolio-site",
+        "test_file": "/mnt/c/Projects/portfolio-site/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.10s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:49.612556Z",
+        "duration_seconds": 0.469
+      },
+      {
+        "repo": "/mnt/c/Projects/private-website",
+        "test_file": "/mnt/c/Projects/private-website/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.21s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:49.653178Z",
+        "duration_seconds": 0.589
+      },
+      {
+        "repo": "/mnt/c/Projects/prognostic-meta",
+        "test_file": "/mnt/c/Projects/prognostic-meta/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.17s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:49.724769Z",
+        "duration_seconds": 0.538
+      },
+      {
+        "repo": "/mnt/c/Projects/pub-bias-simulation",
+        "test_file": "/mnt/c/Projects/pub-bias-simulation/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.18s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:50.081478Z",
+        "duration_seconds": 0.641
+      },
+      {
+        "repo": "/mnt/c/Projects/repo300-ENMA-SNMA",
+        "test_file": "/mnt/c/Projects/repo300-ENMA-SNMA/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.28s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:50.161272Z",
+        "duration_seconds": 0.684
+      },
+      {
+        "repo": "/mnt/c/Projects/rmstnma",
+        "test_file": "/mnt/c/Projects/rmstnma/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.29s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:50.242528Z",
+        "duration_seconds": 0.656
+      },
+      {
+        "repo": "/mnt/c/RMSTmeta",
+        "test_file": "/mnt/c/RMSTmeta/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.17s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:50.263385Z",
+        "duration_seconds": 0.556
+      },
+      {
+        "repo": "/mnt/c/mahmood726-cyber.github.io",
+        "test_file": "/mnt/c/mahmood726-cyber.github.io/tests/test_smoke.py",
+        "ok": true,
+        "returncode": 0,
+        "stdout": ".                                                                        [100%]\n1 passed in 0.07s\n",
+        "stderr": "",
+        "started_at": "2026-03-30T12:34:50.722989Z",
+        "duration_seconds": 0.4
+      }
+    ],
+    "started_at": "2026-03-30T12:34:43.552376Z",
+    "duration_seconds": 7.572,
+    "project_filters": [],
+    "max_tests": 0,
+    "jobs": 4,
+    "report_path": "/mnt/c/E156/audit-report.json"
+  },
+  "project_filters": [],
+  "started_at": null,
+  "duration_seconds": null
+}

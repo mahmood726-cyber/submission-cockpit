@@ -1,0 +1,12 @@
+{
+  "title": "SubmissionCockpit: Editorial Release Control for the C Drive Research Portfolio",
+  "slug": "submission-cockpit",
+  "repo_url": "https://github.com/mahmood726-cyber/submission-cockpit",
+  "author": "Mahmood Ahmad",
+  "institution": "Tahir Heart Institute",
+  "date": "2026-04-01",
+  "dashboard_url": "https://mahmood726-cyber.github.io/submission-cockpit/e156-submission/assets/dashboard.html",
+  "protocol_path": "e156-submission/protocol.md",
+  "paper_path": "e156-submission/paper.md",
+  "paper_json_path": "e156-submission/paper.json"
+}

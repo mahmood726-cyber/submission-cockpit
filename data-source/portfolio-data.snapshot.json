@@ -1,0 +1,3107 @@
+{
+  "overview": {
+    "sourcePath": "data-source/INDEX.snapshot.md",
+    "sourceMode": "snapshot",
+    "generatedAt": "2026-03-29T11:23:55+00:00",
+    "trackedProjects": 134,
+    "tierCount": 12,
+    "statusLabeled": 51,
+    "needsTriage": 83,
+    "explicitCoveragePercent": 38.1,
+    "statusCounts": {
+      "needs-triage": 83,
+      "submission-ready": 19,
+      "shipped": 12,
+      "maintained": 1,
+      "archived": 5,
+      "paused": 10,
+      "active": 2,
+      "accepted": 1,
+      "review": 1
+    },
+    "htmlApps": 8,
+    "modelProjects": 31,
+    "projectFolderProjects": 80,
+    "rootLevelProjects": 14
+  },
+  "statusOrder": [
+    {
+      "key": "active",
+      "label": "Active"
+    },
+    {
+      "key": "submission-ready",
+      "label": "Submission ready"
+    },
+    {
+      "key": "submitted",
+      "label": "Submitted"
+    },
+    {
+      "key": "review",
+      "label": "Review"
+    },
+    {
+      "key": "accepted",
+      "label": "Accepted"
+    },
+    {
+      "key": "published",
+      "label": "Published"
+    },
+    {
+      "key": "shipped",
+      "label": "Shipped"
+    },
+    {
+      "key": "maintained",
+      "label": "Maintained"
+    },
+    {
+      "key": "paused",
+      "label": "Paused"
+    },
+    {
+      "key": "archived",
+      "label": "Archived"
+    },
+    {
+      "key": "needs-triage",
+      "label": "Needs triage"
+    }
+  ],
+  "tiers": [
+    {
+      "key": "tier-1",
+      "name": "Tier 1 \u2014 Flagship Projects (active or near-submission)",
+      "shortName": "Tier 1",
+      "accent": "#0f766e",
+      "count": 7,
+      "summary": "Flagship work close to paper conversion or major validation milestones.",
+      "opportunity": "42.9% explicit status coverage; freeze labels for 4 needs-triage rows.",
+      "statusCounts": {
+        "needs-triage": 4,
+        "submission-ready": 2,
+        "shipped": 1
+      },
+      "statusSummary": "Submission ready 2, Shipped 1, Needs triage 4"
+    },
+    {
+      "key": "tier-2",
+      "name": "Tier 2 \u2014 HTML Apps Portfolio",
+      "shortName": "Tier 2",
+      "accent": "#2563eb",
+      "count": 8,
+      "summary": "Browser-based evidence synthesis apps with publication-facing companions.",
+      "opportunity": "100.0% explicit status coverage; continue maintaining the current labels.",
+      "statusCounts": {
+        "maintained": 1,
+        "shipped": 2,
+        "archived": 4,
+        "paused": 1
+      },
+      "statusSummary": "Shipped 2, Maintained 1, Paused 1, Archived 4"
+    },
+    {
+      "key": "tier-3",
+      "name": "Tier 3 \u2014 MetaSprint Family (C:\\Projects\\)",
+      "shortName": "Tier 3",
+      "accent": "#c2410c",
+      "count": 6,
+      "summary": "MetaSprint product family spanning automation and multiple evidence modes.",
+      "opportunity": "100.0% explicit status coverage; continue maintaining the current labels.",
+      "statusCounts": {
+        "submission-ready": 2,
+        "shipped": 2,
+        "active": 1,
+        "archived": 1
+      },
+      "statusSummary": "Active 1, Submission ready 2, Shipped 2, Archived 1"
+    },
+    {
+      "key": "tier-4",
+      "name": "Tier 4 \u2014 R Packages & Methods Papers",
+      "shortName": "Tier 4",
+      "accent": "#7c3aed",
+      "count": 20,
+      "summary": "Packages and methods papers with strong manuscript and validation depth.",
+      "opportunity": "100.0% explicit status coverage; continue maintaining the current labels.",
+      "statusCounts": {
+        "submission-ready": 8,
+        "shipped": 5,
+        "accepted": 1,
+        "paused": 5,
+        "active": 1
+      },
+      "statusSummary": "Active 1, Submission ready 8, Accepted 1, Shipped 5, Paused 5"
+    },
+    {
+      "key": "tier-5",
+      "name": "Tier 5 \u2014 Cutting-Edge MA Trio + New Root-Level Methods (2026-03-24/25)",
+      "shortName": "Tier 5",
+      "accent": "#be185d",
+      "count": 7,
+      "summary": "New frontier methods and root-level projects still being sequenced.",
+      "opportunity": "57.1% explicit status coverage; freeze labels for 3 needs-triage rows.",
+      "statusCounts": {
+        "needs-triage": 3,
+        "submission-ready": 3,
+        "paused": 1
+      },
+      "statusSummary": "Submission ready 3, Paused 1, Needs triage 3"
+    },
+    {
+      "key": "tier-6",
+      "name": "Tier 6 \u2014 Infrastructure & Datasets",
+      "shortName": "Tier 6",
+      "accent": "#ca8a04",
+      "count": 8,
+      "summary": "Extraction, datasets, and ingestion infrastructure feeding downstream work.",
+      "opportunity": "0.0% explicit status coverage; freeze labels for 8 needs-triage rows.",
+      "statusCounts": {
+        "needs-triage": 8
+      },
+      "statusSummary": "Needs triage 8"
+    },
+    {
+      "key": "tier-7",
+      "name": "Tier 7 \u2014 HTA Suite",
+      "shortName": "Tier 7",
+      "accent": "#0f766e",
+      "count": 6,
+      "summary": "HTA and value frameworks that sit downstream from synthesis engines.",
+      "opportunity": "100.0% explicit status coverage; continue maintaining the current labels.",
+      "statusCounts": {
+        "submission-ready": 3,
+        "paused": 2,
+        "shipped": 1
+      },
+      "statusSummary": "Submission ready 3, Shipped 1, Paused 2"
+    },
+    {
+      "key": "tier-8",
+      "name": "Tier 8 \u2014 Educational & Course Material",
+      "shortName": "Tier 8",
+      "accent": "#1d4ed8",
+      "count": 3,
+      "summary": "Educational assets and teaching material rather than production apps.",
+      "opportunity": "0.0% explicit status coverage; freeze labels for 3 needs-triage rows.",
+      "statusCounts": {
+        "needs-triage": 3
+      },
+      "statusSummary": "Needs triage 3"
+    },
+    {
+      "key": "tier-9",
+      "name": "Tier 9 \u2014 Collaborative & External",
+      "shortName": "Tier 9",
+      "accent": "#b45309",
+      "count": 5,
+      "summary": "Collaborative or external-facing projects with mixed ownership and timing.",
+      "opportunity": "20.0% explicit status coverage; freeze labels for 4 needs-triage rows.",
+      "statusCounts": {
+        "submission-ready": 1,
+        "needs-triage": 4
+      },
+      "statusSummary": "Submission ready 1, Needs triage 4"
+    },
+    {
+      "key": "tier-10",
+      "name": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "shortName": "Tier 10",
+      "accent": "#9333ea",
+      "count": 33,
+      "summary": "Standalone apps and methods utilities that widen the portfolio surface.",
+      "opportunity": "3.0% explicit status coverage; freeze labels for 32 needs-triage rows.",
+      "statusCounts": {
+        "needs-triage": 32,
+        "review": 1
+      },
+      "statusSummary": "Review 1, Needs triage 32"
+    },
+    {
+      "key": "tier-11",
+      "name": "Tier 11 \u2014 Website & Non-Academic",
+      "shortName": "Tier 11",
+      "accent": "#dc2626",
+      "count": 5,
+      "summary": "Website and non-academic projects outside the core methods lane.",
+      "opportunity": "20.0% explicit status coverage; freeze labels for 4 needs-triage rows.",
+      "statusCounts": {
+        "shipped": 1,
+        "needs-triage": 4
+      },
+      "statusSummary": "Shipped 1, Needs triage 4"
+    },
+    {
+      "key": "tier-12",
+      "name": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "shortName": "Tier 12",
+      "accent": "#374151",
+      "count": 26,
+      "summary": "Backlog and exploratory research projects requiring clearer prioritisation.",
+      "opportunity": "3.8% explicit status coverage; freeze labels for 25 needs-triage rows.",
+      "statusCounts": {
+        "paused": 1,
+        "needs-triage": 25
+      },
+      "statusSummary": "Paused 1, Needs triage 25"
+    }
+  ],
+  "roadmap": [
+    {
+      "title": "Phase 0: Snapshot atlas",
+      "detail": "Compile tier and status data from the bundled project-index snapshot so the public atlas is reproducible from the repository alone."
+    },
+    {
+      "title": "Phase 1: Status freeze",
+      "detail": "Use the needs-triage queue to finish explicit labels for every tracked project and reduce ambiguous rows before June 30, 2026."
+    },
+    {
+      "title": "Phase 2: Folder metadata",
+      "detail": "Merge last-write timestamps, git presence, paper folders, and validation artifacts from the indexed paths into the portfolio layer."
+    },
+    {
+      "title": "Phase 3: Submission cockpit",
+      "detail": "Expose submission, release, and validation state in one surface so the atlas becomes an operating console rather than a directory browser."
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "6",
+      "name": "AdaptSim",
+      "path": "C:\\AdaptSim\\",
+      "tierKey": "tier-1",
+      "tierShortName": "Tier 1",
+      "tierName": "Tier 1 \u2014 Flagship Projects (active or near-submission)",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Type: HTML app | Lines/Tests: 2,926 / \u2014 | Target Journal: Lancet Digital Health + F1000",
+      "row": {
+        "#": "6",
+        "Project": "AdaptSim",
+        "Location": "C:\\AdaptSim\\",
+        "Type": "HTML app",
+        "Lines/Tests": "2,926 / \u2014",
+        "Paper Status": "SUBMISSION-READY",
+        "Target Journal": "Lancet Digital Health + F1000",
+        "Last Touch": "2026-03-24"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Al-Mizan",
+      "path": "C:\\AlMizan\\",
+      "tierKey": "tier-1",
+      "tierShortName": "Tier 1",
+      "tierName": "Tier 1 \u2014 Flagship Projects (active or near-submission)",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Type: HTML app | Lines/Tests: 2,534 / \u2014 | Target Journal: BMJ Evidence-Based Medicine",
+      "row": {
+        "#": "4",
+        "Project": "Al-Mizan",
+        "Location": "C:\\AlMizan\\",
+        "Type": "HTML app",
+        "Lines/Tests": "2,534 / \u2014",
+        "Paper Status": "SUBMISSION-READY",
+        "Target Journal": "BMJ Evidence-Based Medicine",
+        "Last Touch": "2026-03-24"
+      }
+    },
+    {
+      "id": "5",
+      "name": "Bias Forensics",
+      "path": "C:\\BiasForensics\\",
+      "tierKey": "tier-1",
+      "tierShortName": "Tier 1",
+      "tierName": "Tier 1 \u2014 Flagship Projects (active or near-submission)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Python pipeline",
+      "detail": "Type: Python pipeline | Lines/Tests: 307 reviews / \u2014 | Target Journal: Research Synthesis Methods",
+      "row": {
+        "#": "5",
+        "Project": "Bias Forensics",
+        "Location": "C:\\BiasForensics\\",
+        "Type": "Python pipeline",
+        "Lines/Tests": "307 reviews / \u2014",
+        "Paper Status": "90% \u2014 figs+cover+data fixed",
+        "Target Journal": "Research Synthesis Methods",
+        "Last Touch": "2026-03-25"
+      }
+    },
+    {
+      "id": "1",
+      "name": "CardioOracle",
+      "path": "C:\\Models\\CardioOracle\\",
+      "tierKey": "tier-1",
+      "tierShortName": "Tier 1",
+      "tierName": "Tier 1 \u2014 Flagship Projects (active or near-submission)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "HTML app",
+      "detail": "Type: HTML app | Lines/Tests: ~15K / \u2014 | Target Journal: Lancet Digital Health",
+      "row": {
+        "#": "1",
+        "Project": "CardioOracle",
+        "Location": "C:\\Models\\CardioOracle\\",
+        "Type": "HTML app",
+        "Lines/Tests": "~15K / \u2014",
+        "Paper Status": "Draft done, needs prospective validation",
+        "Target Journal": "Lancet Digital Health",
+        "Last Touch": "2026-03-25"
+      }
+    },
+    {
+      "id": "7",
+      "name": "Clinic Website",
+      "path": "C:\\Projects\\clinic-site\\",
+      "tierKey": "tier-1",
+      "tierShortName": "Tier 1",
+      "tierName": "Tier 1 \u2014 Flagship Projects (active or near-submission)",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "N/A (live site)",
+      "statusExplicit": true,
+      "type": "Static site",
+      "detail": "Type: Static site | Lines/Tests: 445 / \u2014",
+      "row": {
+        "#": "7",
+        "Project": "Clinic Website",
+        "Location": "C:\\Projects\\clinic-site\\",
+        "Type": "Static site",
+        "Lines/Tests": "445 / \u2014",
+        "Paper Status": "N/A (live site)",
+        "Target Journal": "\u2014",
+        "Last Touch": "ACTIVE"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Fragility Atlas",
+      "path": "C:\\FragilityAtlas\\",
+      "tierKey": "tier-1",
+      "tierShortName": "Tier 1",
+      "tierName": "Tier 1 \u2014 Flagship Projects (active or near-submission)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Pipeline+Dashboard",
+      "detail": "Type: Pipeline+Dashboard | Lines/Tests: 399K specs / 15 tests | Target Journal: BMJ",
+      "row": {
+        "#": "2",
+        "Project": "Fragility Atlas",
+        "Location": "C:\\FragilityAtlas\\",
+        "Type": "Pipeline+Dashboard",
+        "Lines/Tests": "399K specs / 15 tests",
+        "Paper Status": "90% \u2014 R validated 10/10 (DL/REML/FE/PM match metafor)",
+        "Target Journal": "BMJ",
+        "Last Touch": "2026-03-25"
+      }
+    },
+    {
+      "id": "3",
+      "name": "MetaReproducer",
+      "path": "C:\\Models\\MetaReproducer\\",
+      "tierKey": "tier-1",
+      "tierShortName": "Tier 1",
+      "tierName": "Tier 1 \u2014 Flagship Projects (active or near-submission)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Python pipeline+HTML",
+      "detail": "Type: Python pipeline+HTML | Lines/Tests: 8 modules / 98 tests | Target Journal: BMJ",
+      "row": {
+        "#": "3",
+        "Project": "MetaReproducer",
+        "Location": "C:\\Models\\MetaReproducer\\",
+        "Type": "Python pipeline+HTML",
+        "Lines/Tests": "8 modules / 98 tests",
+        "Paper Status": "BMJ manuscript written (~3,800w)",
+        "Target Journal": "BMJ",
+        "Last Touch": "2026-03-25"
+      }
+    },
+    {
+      "id": "68",
+      "name": "3dvitreous-grapher",
+      "path": "C:\\Projects\\3dvitreous-grapher\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "68",
+        "Project": "3dvitreous-grapher",
+        "Location": "C:\\Projects\\3dvitreous-grapher\\",
+        "Status": "3D visualization"
+      }
+    },
+    {
+      "id": "63",
+      "name": "Asa",
+      "path": "C:\\Models\\Asa\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "63",
+        "Project": "Asa",
+        "Location": "C:\\Models\\Asa\\",
+        "Status": "v2.0.0, 7 fangs, 85/85 tests, REVIEW CLEAN"
+      }
+    },
+    {
+      "id": "73a",
+      "name": "Asa",
+      "path": "C:\\Models\\Asa\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "73a",
+        "Project": "Asa",
+        "Location": "C:\\Models\\Asa\\",
+        "Status": "Forensic data integrity screener (2026-03-25)"
+      }
+    },
+    {
+      "id": "109",
+      "name": "Bayesian MA",
+      "path": "C:\\Models\\BayesianMA\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "109",
+        "Project": "Bayesian MA",
+        "Location": "C:\\Models\\BayesianMA\\",
+        "Status": "v1.0, 25/25 tests, normal-normal hierarchical"
+      }
+    },
+    {
+      "id": "107",
+      "name": "BenfordMA",
+      "path": "C:\\BenfordMA\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Root-level project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "107",
+        "Project": "BenfordMA",
+        "Location": "C:\\BenfordMA\\",
+        "Status": "v1.0, 1,488 lines, Benford digit forensics for 403 reviews, MAD=0.020"
+      }
+    },
+    {
+      "id": "103",
+      "name": "Component NMA",
+      "path": "C:\\Models\\ComponentNMA\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "103",
+        "Project": "Component NMA",
+        "Location": "C:\\Models\\ComponentNMA\\",
+        "Status": "v1.1, 25/25 tests, cNMA + interactions + RE"
+      }
+    },
+    {
+      "id": "66",
+      "name": "ctgov-search-strategies",
+      "path": "C:\\Projects\\ctgov-search-strategies\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "66",
+        "Project": "ctgov-search-strategies",
+        "Location": "C:\\Projects\\ctgov-search-strategies\\",
+        "Status": "API integrations"
+      }
+    },
+    {
+      "id": "67",
+      "name": "cv-rct-analysis",
+      "path": "C:\\Projects\\cv-rct-analysis\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "67",
+        "Project": "cv-rct-analysis",
+        "Location": "C:\\Projects\\cv-rct-analysis\\",
+        "Status": "Analysis dashboard"
+      }
+    },
+    {
+      "id": "108",
+      "name": "Evidence Half-Life",
+      "path": "C:\\EvidenceHalfLife\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Root-level project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "108",
+        "Project": "Evidence Half-Life",
+        "Location": "C:\\EvidenceHalfLife\\",
+        "Status": "Cumulative multiverse, 307 reviews, 15 tests, 57% never stabilize"
+      }
+    },
+    {
+      "id": "105",
+      "name": "EvidenceQuality (Concordance)",
+      "path": "C:\\EvidenceQuality\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Root-level project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "105",
+        "Project": "EvidenceQuality (Concordance)",
+        "Location": "C:\\EvidenceQuality\\",
+        "Status": "6D quality concordance, 403 reviews, 14 tests, BMJ manuscript"
+      }
+    },
+    {
+      "id": "73f",
+      "name": "Living MA Engine",
+      "path": "C:\\Projects\\living-meta-engine\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "73f",
+        "Project": "Living MA Engine",
+        "Location": "C:\\Projects\\living-meta-engine\\",
+        "Status": "902L unified engine, 3 therapy configs"
+      }
+    },
+    {
+      "id": "69",
+      "name": "LivingMeta Watchman",
+      "path": "C:\\Projects\\LivingMeta_Watchman_Amulet\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "69",
+        "Project": "LivingMeta Watchman",
+        "Location": "C:\\Projects\\LivingMeta_Watchman_Amulet\\",
+        "Status": "Living MA app"
+      }
+    },
+    {
+      "id": "106",
+      "name": "MA Power",
+      "path": "C:\\Models\\MAPowerCalc\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "106",
+        "Project": "MA Power",
+        "Location": "C:\\Models\\MAPowerCalc\\",
+        "Status": "v1.0, 25/25 tests, power + sample size + curves"
+      }
+    },
+    {
+      "id": "110",
+      "name": "MA Workbench",
+      "path": "C:\\Models\\MAWorkbench\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "110",
+        "Project": "MA Workbench",
+        "Location": "C:\\Models\\MAWorkbench\\",
+        "Status": "SR workflow landing page, 30+ tool cards"
+      }
+    },
+    {
+      "id": "113",
+      "name": "Meta-Regression",
+      "path": "C:\\Models\\MetaRegression\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "113",
+        "Project": "Meta-Regression",
+        "Location": "C:\\Models\\MetaRegression\\",
+        "Status": "v1.0, world-first browser meta-regression"
+      }
+    },
+    {
+      "id": "65",
+      "name": "MetaExtract",
+      "path": "C:\\Projects\\MetaExtract\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "65",
+        "Project": "MetaExtract",
+        "Location": "C:\\Projects\\MetaExtract\\",
+        "Status": "P0+P1 fixes done"
+      }
+    },
+    {
+      "id": "79",
+      "name": "MetaGuard",
+      "path": "C:\\Models\\MetaGuard\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "79",
+        "Project": "MetaGuard",
+        "Location": "C:\\Models\\MetaGuard\\",
+        "Status": "v1.0.0, 3 frontier engines (DPD+RTMA+MetaForest), 22/22 tests"
+      }
+    },
+    {
+      "id": "80",
+      "name": "MetaMethods",
+      "path": "C:\\Models\\MetaMethods\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "80",
+        "Project": "MetaMethods",
+        "Location": "C:\\Models\\MetaMethods\\",
+        "Status": "6 advanced methods Python module, 30/30 tests"
+      }
+    },
+    {
+      "id": "108a",
+      "name": "MetaShift",
+      "path": "C:\\MetaShift\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Root-level project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "108a",
+        "Project": "MetaShift",
+        "Location": "C:\\MetaShift\\",
+        "Status": "v1.0, 1,325 lines, CUSUM/PELT changepoint detection for cumulative MA"
+      }
+    },
+    {
+      "id": "73",
+      "name": "minireview",
+      "path": "C:\\Projects\\minireview\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "73",
+        "Project": "minireview",
+        "Location": "C:\\Projects\\minireview\\",
+        "Status": "Quick review app"
+      }
+    },
+    {
+      "id": "73d",
+      "name": "new-app",
+      "path": "C:\\Projects\\new-app\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "73d",
+        "Project": "new-app",
+        "Location": "C:\\Projects\\new-app\\",
+        "Status": "Minimal app"
+      }
+    },
+    {
+      "id": "73b",
+      "name": "oman",
+      "path": "C:\\Projects\\oman\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "73b",
+        "Project": "oman",
+        "Location": "C:\\Projects\\oman\\",
+        "Status": "Oman HTA app"
+      }
+    },
+    {
+      "id": "70",
+      "name": "PFA AF LivingMeta",
+      "path": "C:\\Projects\\PFA_AF_LivingMeta\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "70",
+        "Project": "PFA AF LivingMeta",
+        "Location": "C:\\Projects\\PFA_AF_LivingMeta\\",
+        "Status": "PFA AF tracker"
+      }
+    },
+    {
+      "id": "112",
+      "name": "Pooling Suite",
+      "path": "C:\\Models\\PoolingSuite\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "112",
+        "Project": "Pooling Suite",
+        "Location": "C:\\Models\\PoolingSuite\\",
+        "Status": "v1.0, 15 estimators + LOO + Baujat + GOSH"
+      }
+    },
+    {
+      "id": "73e",
+      "name": "Portfolio Site",
+      "path": "C:\\Projects\\portfolio-site\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "73e",
+        "Project": "Portfolio Site",
+        "Location": "C:\\Projects\\portfolio-site\\",
+        "Status": "794L showcase, GitHub Pages ready"
+      }
+    },
+    {
+      "id": "107",
+      "name": "PRISMA Checker",
+      "path": "C:\\Models\\PRISMAChecker\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "107",
+        "Project": "PRISMA Checker",
+        "Location": "C:\\Models\\PRISMAChecker\\",
+        "Status": "v1.0, 25/25 tests, 27-item PRISMA 2020 + 6 extensions"
+      }
+    },
+    {
+      "id": "111",
+      "name": "Pub Bias Suite",
+      "path": "C:\\Models\\PubBiasSuite\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "111",
+        "Project": "Pub Bias Suite",
+        "Location": "C:\\Models\\PubBiasSuite\\",
+        "Status": "v1.0, 25/25 tests, 12 methods + 3 funnel plots"
+      }
+    },
+    {
+      "id": "72",
+      "name": "rayyanreplacement",
+      "path": "C:\\Projects\\rayyanreplacement\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "72",
+        "Project": "rayyanreplacement",
+        "Location": "C:\\Projects\\rayyanreplacement\\",
+        "Status": "Screening tool"
+      }
+    },
+    {
+      "id": "104",
+      "name": "RMST Meta",
+      "path": "C:\\RMSTmeta\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Root-level project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "104",
+        "Project": "RMST Meta",
+        "Location": "C:\\RMSTmeta\\",
+        "Status": "v1.1, 1,660 lines, REML+DL+Egger's, Stat Med target"
+      }
+    },
+    {
+      "id": "102",
+      "name": "RoB Assessor",
+      "path": "C:\\Models\\RoBAssessor\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "102",
+        "Project": "RoB Assessor",
+        "Location": "C:\\Models\\RoBAssessor\\",
+        "Status": "v1.0, 25/25 tests, RoB 2 + ROBINS-I + guided judgments"
+      }
+    },
+    {
+      "id": "73c",
+      "name": "superapp",
+      "path": "C:\\Projects\\superapp\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "73c",
+        "Project": "superapp",
+        "Location": "C:\\Projects\\superapp\\",
+        "Status": "Minimal app"
+      }
+    },
+    {
+      "id": "64",
+      "name": "TrialRadar",
+      "path": "C:\\Projects\\TrialRadar\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "review",
+      "statusLabel": "Review",
+      "statusNote": "Review fixes done",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "64",
+        "Project": "TrialRadar",
+        "Location": "C:\\Projects\\TrialRadar\\",
+        "Status": "Review fixes done"
+      }
+    },
+    {
+      "id": "71",
+      "name": "Tricuspid TEER",
+      "path": "C:\\Projects\\Tricuspid_TEER_LivingMeta\\",
+      "tierKey": "tier-10",
+      "tierShortName": "Tier 10",
+      "tierName": "Tier 10 \u2014 Smaller / Standalone Apps",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "71",
+        "Project": "Tricuspid TEER",
+        "Location": "C:\\Projects\\Tricuspid_TEER_LivingMeta\\",
+        "Status": "Tricuspid tracker"
+      }
+    },
+    {
+      "id": "76",
+      "name": "childnajia",
+      "path": "C:\\Projects\\childnajia\\",
+      "tierKey": "tier-11",
+      "tierShortName": "Tier 11",
+      "tierName": "Tier 11 \u2014 Website & Non-Academic",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "76",
+        "Project": "childnajia",
+        "Location": "C:\\Projects\\childnajia\\",
+        "Status": "Children's app"
+      }
+    },
+    {
+      "id": "74",
+      "name": "Clinic Site",
+      "path": "C:\\Projects\\clinic-site\\",
+      "tierKey": "tier-11",
+      "tierShortName": "Tier 11",
+      "tierName": "Tier 11 \u2014 Website & Non-Academic",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "LIVE",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "74",
+        "Project": "Clinic Site",
+        "Location": "C:\\Projects\\clinic-site\\",
+        "Status": "LIVE"
+      }
+    },
+    {
+      "id": "75",
+      "name": "Private Website",
+      "path": "C:\\Projects\\private-website\\",
+      "tierKey": "tier-11",
+      "tierShortName": "Tier 11",
+      "tierName": "Tier 11 \u2014 Website & Non-Academic",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "75",
+        "Project": "Private Website",
+        "Location": "C:\\Projects\\private-website\\",
+        "Status": "OpenPalp booklet"
+      }
+    },
+    {
+      "id": "78",
+      "name": "Stories",
+      "path": "C:\\Projects\\Stories\\",
+      "tierKey": "tier-11",
+      "tierShortName": "Tier 11",
+      "tierName": "Tier 11 \u2014 Website & Non-Academic",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "78",
+        "Project": "Stories",
+        "Location": "C:\\Projects\\Stories\\",
+        "Status": "CAST narrative"
+      }
+    },
+    {
+      "id": "77",
+      "name": "waternajia",
+      "path": "C:\\Projects\\waternajia\\",
+      "tierKey": "tier-11",
+      "tierShortName": "Tier 11",
+      "tierName": "Tier 11 \u2014 Website & Non-Academic",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "77",
+        "Project": "waternajia",
+        "Location": "C:\\Projects\\waternajia\\",
+        "Status": "Water app"
+      }
+    },
+    {
+      "id": "97",
+      "name": "advanced-nma-pooling",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "97",
+        "Project": "advanced-nma-pooling",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "Advanced NMA research"
+      }
+    },
+    {
+      "id": "102",
+      "name": "claude-plugins",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "102",
+        "Project": "claude-plugins",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "Plugin experiments"
+      }
+    },
+    {
+      "id": "101",
+      "name": "claude-rct-work",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "101",
+        "Project": "claude-rct-work",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "RCT work"
+      }
+    },
+    {
+      "id": "85",
+      "name": "esc-acs-living-meta",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "85",
+        "Project": "esc-acs-living-meta",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "ESC ACS living MA"
+      }
+    },
+    {
+      "id": "93",
+      "name": "everything-claude-code",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "93",
+        "Project": "everything-claude-code",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "Claude Code guide"
+      }
+    },
+    {
+      "id": "80",
+      "name": "evidence-inference",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "80",
+        "Project": "evidence-inference",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "ML evidence extraction"
+      }
+    },
+    {
+      "id": "91",
+      "name": "experimental-meta-analysis",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "91",
+        "Project": "experimental-meta-analysis",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "Experimental MA"
+      }
+    },
+    {
+      "id": "104",
+      "name": "glm-code",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "104",
+        "Project": "glm-code",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "GLM code"
+      }
+    },
+    {
+      "id": "83",
+      "name": "hfpef_registry_calibration",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "83",
+        "Project": "hfpef_registry_calibration",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "HFpEF calibration"
+      }
+    },
+    {
+      "id": "82",
+      "name": "hfpef_registry_synth",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "82",
+        "Project": "hfpef_registry_synth",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "HFpEF CT.gov prefilter"
+      }
+    },
+    {
+      "id": "92",
+      "name": "idea12",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "92",
+        "Project": "idea12",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "Research project"
+      }
+    },
+    {
+      "id": "94",
+      "name": "ipd-meta-pro-link",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "94",
+        "Project": "ipd-meta-pro-link",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "IPD MA link"
+      }
+    },
+    {
+      "id": "95",
+      "name": "ipd_qma_project",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "95",
+        "Project": "ipd_qma_project",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "IPD QMA framework"
+      }
+    },
+    {
+      "id": "81",
+      "name": "llm-meta-analysis",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "81",
+        "Project": "llm-meta-analysis",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "LLM-based MA"
+      }
+    },
+    {
+      "id": "88",
+      "name": "MAFI",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "88",
+        "Project": "MAFI",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "Fragility index method"
+      }
+    },
+    {
+      "id": "89",
+      "name": "MAFI-Continuation",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "89",
+        "Project": "MAFI-Continuation",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "MAFI extension"
+      }
+    },
+    {
+      "id": "90",
+      "name": "maxent-reconstructor",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "90",
+        "Project": "maxent-reconstructor",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "MaxEnt KM reconstruction"
+      }
+    },
+    {
+      "id": "79",
+      "name": "meta-epidemiology-bias-correction",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Git: Y (manuscript/)",
+      "row": {
+        "#": "79",
+        "Project": "meta-epidemiology-bias-correction",
+        "Location": "C:\\Projects\\",
+        "Git": "Y (manuscript/)",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "100",
+      "name": "MetaFusion-Lab",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "100",
+        "Project": "MetaFusion-Lab",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "MetaFusion research"
+      }
+    },
+    {
+      "id": "86",
+      "name": "Metanew",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y (paper/)",
+      "row": {
+        "#": "86",
+        "Project": "Metanew",
+        "Location": "C:\\Projects\\",
+        "Git": "Y (paper/)",
+        "Status": "Meta methods v2"
+      }
+    },
+    {
+      "id": "87",
+      "name": "MLM501",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "87",
+        "Project": "MLM501",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "Multilevel model 501"
+      }
+    },
+    {
+      "id": "103",
+      "name": "Multipledatameta",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: Y",
+      "row": {
+        "#": "103",
+        "Project": "Multipledatameta",
+        "Location": "C:\\Projects\\",
+        "Git": "Y",
+        "Status": "Multiple data MA"
+      }
+    },
+    {
+      "id": "96",
+      "name": "prognostic-meta",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "96",
+        "Project": "prognostic-meta",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "Prognostic MA app, 35/35 tests"
+      }
+    },
+    {
+      "id": "84",
+      "name": "registry_first_rct_meta",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "84",
+        "Project": "registry_first_rct_meta",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "Registry-first RCT MA"
+      }
+    },
+    {
+      "id": "99",
+      "name": "surroNMA",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "99",
+        "Project": "surroNMA",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "Surrogate NMA"
+      }
+    },
+    {
+      "id": "98",
+      "name": "tower",
+      "path": "C:\\Projects\\",
+      "tierKey": "tier-12",
+      "tierShortName": "Tier 12",
+      "tierName": "Tier 12 \u2014 Research Projects (C:\\Projects\\, various)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Git: N",
+      "row": {
+        "#": "98",
+        "Project": "tower",
+        "Location": "C:\\Projects\\",
+        "Git": "N",
+        "Status": "Bash+Python+JS tool"
+      }
+    },
+    {
+      "id": "13",
+      "name": "Dose-Response NMA",
+      "path": "C:\\HTML apps\\nma-dose-response-app\\",
+      "tierKey": "tier-2",
+      "tierShortName": "Tier 2",
+      "tierName": "Tier 2 \u2014 HTML Apps Portfolio",
+      "status": "archived",
+      "statusLabel": "Archived",
+      "statusNote": "ARCHIVED",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Lines: ~12K | Paper: F1000 done",
+      "row": {
+        "#": "13",
+        "Project": "Dose-Response NMA",
+        "Location": "C:\\HTML apps\\nma-dose-response-app\\",
+        "Lines": "~12K",
+        "Tests": "\u2014",
+        "Paper": "F1000 done",
+        "Status": "ARCHIVED"
+      }
+    },
+    {
+      "id": "10",
+      "name": "DTA Pro",
+      "path": "C:\\HTML apps\\DTA_Pro_Review\\",
+      "tierKey": "tier-2",
+      "tierShortName": "Tier 2",
+      "tierName": "Tier 2 \u2014 HTML Apps Portfolio",
+      "status": "archived",
+      "statusLabel": "Archived",
+      "statusNote": "ARCHIVED (97 fixes)",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Lines: 54,000 | Tests: 27 R parity | Paper: F1000 done",
+      "row": {
+        "#": "10",
+        "Project": "DTA Pro",
+        "Location": "C:\\HTML apps\\DTA_Pro_Review\\",
+        "Lines": "54,000",
+        "Tests": "27 R parity",
+        "Paper": "F1000 done",
+        "Status": "ARCHIVED (97 fixes)"
+      }
+    },
+    {
+      "id": "11",
+      "name": "HTA Artifact Standard",
+      "path": "C:\\HTML apps\\HTA\\",
+      "tierKey": "tier-2",
+      "tierShortName": "Tier 2",
+      "tierName": "Tier 2 \u2014 HTML Apps Portfolio",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED v1.0.0",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Lines: 41 engines | Tests: 3,337 tests | Paper: F1000 updated",
+      "row": {
+        "#": "11",
+        "Project": "HTA Artifact Standard",
+        "Location": "C:\\HTML apps\\HTA\\",
+        "Lines": "41 engines",
+        "Tests": "3,337 tests",
+        "Paper": "F1000 updated",
+        "Status": "SHIPPED v1.0.0"
+      }
+    },
+    {
+      "id": "9",
+      "name": "IPD-Meta-Pro",
+      "path": "C:\\HTML apps\\IPD-Meta-Pro\\",
+      "tierKey": "tier-2",
+      "tierShortName": "Tier 2",
+      "tierName": "Tier 2 \u2014 HTML Apps Portfolio",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Lines: 51,000 | Tests: 56 regression | Paper: F1000 done",
+      "row": {
+        "#": "9",
+        "Project": "IPD-Meta-Pro",
+        "Location": "C:\\HTML apps\\IPD-Meta-Pro\\",
+        "Lines": "51,000",
+        "Tests": "56 regression",
+        "Paper": "F1000 done",
+        "Status": "SHIPPED"
+      }
+    },
+    {
+      "id": "15",
+      "name": "Living-Meta",
+      "path": "C:\\HTML apps\\living-meta\\",
+      "tierKey": "tier-2",
+      "tierShortName": "Tier 2",
+      "tierName": "Tier 2 \u2014 HTML Apps Portfolio",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Lines: ~8K files",
+      "row": {
+        "#": "15",
+        "Project": "Living-Meta",
+        "Location": "C:\\HTML apps\\living-meta\\",
+        "Lines": "~8K files",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "12",
+      "name": "NMA apps",
+      "path": "C:\\HTML apps\\NMAhtml\\",
+      "tierKey": "tier-2",
+      "tierShortName": "Tier 2",
+      "tierName": "Tier 2 \u2014 HTML Apps Portfolio",
+      "status": "archived",
+      "statusLabel": "Archived",
+      "statusNote": "ARCHIVED",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Lines: 22 variants | Paper: F1000 done",
+      "row": {
+        "#": "12",
+        "Project": "NMA apps",
+        "Location": "C:\\HTML apps\\NMAhtml\\",
+        "Lines": "22 variants",
+        "Tests": "\u2014",
+        "Paper": "F1000 done",
+        "Status": "ARCHIVED"
+      }
+    },
+    {
+      "id": "14",
+      "name": "Pairwise AI",
+      "path": "C:\\HTML apps\\Pairwiseai\\",
+      "tierKey": "tier-2",
+      "tierShortName": "Tier 2",
+      "tierName": "Tier 2 \u2014 HTML Apps Portfolio",
+      "status": "archived",
+      "statusLabel": "Archived",
+      "statusNote": "ARCHIVED",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Lines: 13 variants",
+      "row": {
+        "#": "14",
+        "Project": "Pairwise AI",
+        "Location": "C:\\HTML apps\\Pairwiseai\\",
+        "Lines": "13 variants",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "ARCHIVED"
+      }
+    },
+    {
+      "id": "8",
+      "name": "TruthCert PairwisePro",
+      "path": "C:\\HTML apps\\Truthcert1_work\\",
+      "tierKey": "tier-2",
+      "tierShortName": "Tier 2",
+      "tierName": "Tier 2 \u2014 HTML Apps Portfolio",
+      "status": "maintained",
+      "statusLabel": "Maintained",
+      "statusNote": "CODE FREEZE v1.1",
+      "statusExplicit": true,
+      "type": "HTML app",
+      "detail": "Lines: 27,901 | Tests: 101 Selenium | Paper: F1000 done",
+      "row": {
+        "#": "8",
+        "Project": "TruthCert PairwisePro",
+        "Location": "C:\\HTML apps\\Truthcert1_work\\",
+        "Lines": "27,901",
+        "Tests": "101 Selenium",
+        "Paper": "F1000 done",
+        "Status": "CODE FREEZE v1.1"
+      }
+    },
+    {
+      "id": "21",
+      "name": "Finrenone RapidMeta",
+      "path": "C:\\Projects\\Finrenone\\",
+      "tierKey": "tier-3",
+      "tierShortName": "Tier 3",
+      "tierName": "Tier 3 \u2014 MetaSprint Family (C:\\Projects\\)",
+      "status": "archived",
+      "statusLabel": "Archived",
+      "statusNote": "ARCHIVED (7/7 validated)",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Lines: ~120K (11 apps) | Tests: 36 tests",
+      "row": {
+        "#": "21",
+        "Project": "Finrenone RapidMeta",
+        "Location": "C:\\Projects\\Finrenone\\",
+        "Lines": "~120K (11 apps)",
+        "Tests": "36 tests",
+        "Paper": "\u2014",
+        "Status": "ARCHIVED (7/7 validated)"
+      }
+    },
+    {
+      "id": "16",
+      "name": "MetaSprint Autopilot",
+      "path": "C:\\Projects\\metasprint-autopilot\\",
+      "tierKey": "tier-3",
+      "tierShortName": "Tier 3",
+      "tierName": "Tier 3 \u2014 MetaSprint Family (C:\\Projects\\)",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Lines: 30,700 | Tests: ~1,462 total | Paper: PLOS ONE v3",
+      "row": {
+        "#": "16",
+        "Project": "MetaSprint Autopilot",
+        "Location": "C:\\Projects\\metasprint-autopilot\\",
+        "Lines": "30,700",
+        "Tests": "~1,462 total",
+        "Paper": "PLOS ONE v3",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "20",
+      "name": "MetaSprint Cardio Universe",
+      "path": "C:\\Projects\\metasprint-cardio-universe\\",
+      "tierKey": "tier-3",
+      "tierShortName": "Tier 3",
+      "tierName": "Tier 3 \u2014 MetaSprint Family (C:\\Projects\\)",
+      "status": "active",
+      "statusLabel": "Active",
+      "statusNote": "ACTIVE",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "20",
+        "Project": "MetaSprint Cardio Universe",
+        "Location": "C:\\Projects\\metasprint-cardio-universe\\",
+        "Lines": "\u2014",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "ACTIVE"
+      }
+    },
+    {
+      "id": "19",
+      "name": "MetaSprint Dose-Response",
+      "path": "C:\\Projects\\metasprint-dose-response\\",
+      "tierKey": "tier-3",
+      "tierShortName": "Tier 3",
+      "tierName": "Tier 3 \u2014 MetaSprint Family (C:\\Projects\\)",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Lines: 25,975",
+      "row": {
+        "#": "19",
+        "Project": "MetaSprint Dose-Response",
+        "Location": "C:\\Projects\\metasprint-dose-response\\",
+        "Lines": "25,975",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "SHIPPED"
+      }
+    },
+    {
+      "id": "17",
+      "name": "MetaSprint DTA",
+      "path": "C:\\Projects\\metasprint-dta\\",
+      "tierKey": "tier-3",
+      "tierShortName": "Tier 3",
+      "tierName": "Tier 3 \u2014 MetaSprint Family (C:\\Projects\\)",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Lines: 28,857 | Tests: ~857 total | Paper: F1000 done",
+      "row": {
+        "#": "17",
+        "Project": "MetaSprint DTA",
+        "Location": "C:\\Projects\\metasprint-dta\\",
+        "Lines": "28,857",
+        "Tests": "~857 total",
+        "Paper": "F1000 done",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "18",
+      "name": "MetaSprint NMA",
+      "path": "C:\\Projects\\metasprintnma\\",
+      "tierKey": "tier-3",
+      "tierShortName": "Tier 3",
+      "tierName": "Tier 3 \u2014 MetaSprint Family (C:\\Projects\\)",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Lines: 31,499",
+      "row": {
+        "#": "18",
+        "Project": "MetaSprint NMA",
+        "Location": "C:\\Projects\\metasprintnma\\",
+        "Lines": "31,499",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "SHIPPED"
+      }
+    },
+    {
+      "id": "23",
+      "name": "501MLM",
+      "path": "C:\\Projects\\501MLM\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED (R pkg)",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "23",
+        "Project": "501MLM",
+        "Location": "C:\\Projects\\501MLM\\",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "SHIPPED (R pkg)"
+      }
+    },
+    {
+      "id": "37b",
+      "name": "501MLM_Submission",
+      "path": "C:\\Projects\\501MLM_Submission\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Paper: 18 refs, affiliations",
+      "row": {
+        "#": "37b",
+        "Project": "501MLM_Submission",
+        "Location": "C:\\Projects\\501MLM_Submission\\",
+        "Tests": "\u2014",
+        "Paper": "18 refs, affiliations",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "24",
+      "name": "CRES",
+      "path": "C:\\Models\\CRES\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Tests: 227 tests | Paper: PLOS ONE manuscript",
+      "row": {
+        "#": "24",
+        "Project": "CRES",
+        "Location": "C:\\Models\\CRES\\",
+        "Tests": "227 tests",
+        "Paper": "PLOS ONE manuscript",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "28",
+      "name": "GRMA",
+      "path": "C:\\Models\\GRMA_paper\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Paper: PLOS ONE v10.0",
+      "row": {
+        "#": "28",
+        "Project": "GRMA",
+        "Location": "C:\\Models\\GRMA_paper\\",
+        "Tests": "\u2014",
+        "Paper": "PLOS ONE v10.0",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "26",
+      "name": "GWAM",
+      "path": "C:\\Models\\GWAM\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Tests: 91 tests | Paper: Manuscript done",
+      "row": {
+        "#": "26",
+        "Project": "GWAM",
+        "Location": "C:\\Models\\GWAM\\",
+        "Tests": "91 tests",
+        "Paper": "Manuscript done",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "22",
+      "name": "HeterogeneityASE",
+      "path": "C:\\Models\\New_Heterogeneity_Model\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Tests: 24 tests | Paper: F1000 draft",
+      "row": {
+        "#": "22",
+        "Project": "HeterogeneityASE",
+        "Location": "C:\\Models\\New_Heterogeneity_Model\\",
+        "Tests": "24 tests",
+        "Paper": "F1000 draft",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "25",
+      "name": "IPD-QMA",
+      "path": "C:\\Models\\IPD_QMA\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "accepted",
+      "statusLabel": "Accepted",
+      "statusNote": "ACCEPTED",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Tests: 12 tests | Paper: PLOS ONE ACCEPT",
+      "row": {
+        "#": "25",
+        "Project": "IPD-QMA",
+        "Location": "C:\\Models\\IPD_QMA\\",
+        "Tests": "12 tests",
+        "Paper": "PLOS ONE ACCEPT",
+        "Status": "ACCEPTED"
+      }
+    },
+    {
+      "id": "37a",
+      "name": "LFA (cbamm)",
+      "path": "C:\\Projects\\LFA\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED (R pkg)",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Paper: cbamm v0.1.0",
+      "row": {
+        "#": "37a",
+        "Project": "LFA (cbamm)",
+        "Location": "C:\\Projects\\LFA\\",
+        "Tests": "\u2014",
+        "Paper": "cbamm v0.1.0",
+        "Status": "SHIPPED (R pkg)"
+      }
+    },
+    {
+      "id": "27",
+      "name": "MEM (Meta Ecosystem)",
+      "path": "C:\\Models\\Meta_Ecosystem_Model\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Paper: PLOS ONE ready",
+      "row": {
+        "#": "27",
+        "Project": "MEM (Meta Ecosystem)",
+        "Location": "C:\\Models\\Meta_Ecosystem_Model\\",
+        "Tests": "\u2014",
+        "Paper": "PLOS ONE ready",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "30",
+      "name": "metaoverfit",
+      "path": "C:\\Projects\\metaoverfit\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Paper: Manuscript",
+      "row": {
+        "#": "30",
+        "Project": "metaoverfit",
+        "Location": "C:\\Projects\\metaoverfit\\",
+        "Tests": "\u2014",
+        "Paper": "Manuscript",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "37c",
+      "name": "metaoverfit-paper",
+      "path": "C:\\Projects\\metaoverfit-paper\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Paper: Companion paper",
+      "row": {
+        "#": "37c",
+        "Project": "metaoverfit-paper",
+        "Location": "C:\\Projects\\metaoverfit-paper\\",
+        "Tests": "\u2014",
+        "Paper": "Companion paper",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "33",
+      "name": "metaverse-robust-MA",
+      "path": "C:\\Projects\\metaverse-robust-MA\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED (R pkg)",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "33",
+        "Project": "metaverse-robust-MA",
+        "Location": "C:\\Projects\\metaverse-robust-MA\\",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "SHIPPED (R pkg)"
+      }
+    },
+    {
+      "id": "34",
+      "name": "MLMResearch",
+      "path": "C:\\Projects\\MLMResearch\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED (R pkg)",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "34",
+        "Project": "MLMResearch",
+        "Location": "C:\\Projects\\MLMResearch\\",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "SHIPPED (R pkg)"
+      }
+    },
+    {
+      "id": "35",
+      "name": "Paper1 (cbamm)",
+      "path": "C:\\Projects\\Paper1\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Paper: R CMD check PASS",
+      "row": {
+        "#": "35",
+        "Project": "Paper1 (cbamm)",
+        "Location": "C:\\Projects\\Paper1\\",
+        "Tests": "\u2014",
+        "Paper": "R CMD check PASS",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "36",
+      "name": "Paper2",
+      "path": "C:\\Projects\\Paper2.111025\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "36",
+        "Project": "Paper2",
+        "Location": "C:\\Projects\\Paper2.111025\\",
+        "Tests": "\u2014",
+        "Paper": "\u2014",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "31",
+      "name": "pub-bias-simulation",
+      "path": "C:\\Projects\\pub-bias-simulation\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Paper: Manuscript.Rmd",
+      "row": {
+        "#": "31",
+        "Project": "pub-bias-simulation",
+        "Location": "C:\\Projects\\pub-bias-simulation\\",
+        "Tests": "\u2014",
+        "Paper": "Manuscript.Rmd",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "32",
+      "name": "rmstnma",
+      "path": "C:\\Projects\\rmstnma\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Paper: Manuscript.Rmd",
+      "row": {
+        "#": "32",
+        "Project": "rmstnma",
+        "Location": "C:\\Projects\\rmstnma\\",
+        "Tests": "\u2014",
+        "Paper": "Manuscript.Rmd",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "29",
+      "name": "SYNTHESIS (FATIHA)",
+      "path": "C:\\Models\\FATIHA_Project\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Tests: 82 tests",
+      "row": {
+        "#": "29",
+        "Project": "SYNTHESIS (FATIHA)",
+        "Location": "C:\\Models\\FATIHA_Project\\",
+        "Tests": "82 tests",
+        "Paper": "\u2014",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "106",
+      "name": "UBCMA",
+      "path": "C:\\ubcma\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "active",
+      "statusLabel": "Active",
+      "statusNote": "ACTIVE v0.3.0",
+      "statusExplicit": true,
+      "type": "Root-level project",
+      "detail": "Tests: 9 tests | Paper: Python pkg, bias-calibrated MA",
+      "row": {
+        "#": "106",
+        "Project": "UBCMA",
+        "Location": "C:\\ubcma\\",
+        "Tests": "9 tests",
+        "Paper": "Python pkg, bias-calibrated MA",
+        "Status": "ACTIVE v0.3.0"
+      }
+    },
+    {
+      "id": "37",
+      "name": "wasserstein",
+      "path": "C:\\Projects\\wasserstein\\",
+      "tierKey": "tier-4",
+      "tierShortName": "Tier 4",
+      "tierName": "Tier 4 \u2014 R Packages & Methods Papers",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Paper: v1.4, 36/40 CI",
+      "row": {
+        "#": "37",
+        "Project": "wasserstein",
+        "Location": "C:\\Projects\\wasserstein\\",
+        "Tests": "\u2014",
+        "Paper": "v1.4, 36/40 CI",
+        "Status": "SHIPPED"
+      }
+    },
+    {
+      "id": "39",
+      "name": "CausalSynth",
+      "path": "C:\\Models\\CausalSynth\\",
+      "tierKey": "tier-5",
+      "tierShortName": "Tier 5",
+      "tierName": "Tier 5 \u2014 Cutting-Edge MA Trio + New Root-Level Methods (2026-03-24/25)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Paper: F1000 ready | Last Commit: 2026-03-24",
+      "row": {
+        "#": "39",
+        "Project": "CausalSynth",
+        "Location": "C:\\Models\\CausalSynth\\",
+        "Paper": "F1000 ready",
+        "Status": "Phase 1 complete",
+        "Last Commit": "2026-03-24"
+      }
+    },
+    {
+      "id": "40d",
+      "name": "EvidenceGapMap",
+      "path": "C:\\EvidenceGapMap\\",
+      "tierKey": "tier-5",
+      "tierShortName": "Tier 5",
+      "tierName": "Tier 5 \u2014 Cutting-Edge MA Trio + New Root-Level Methods (2026-03-24/25)",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED (no git)",
+      "statusExplicit": true,
+      "type": "Root-level project",
+      "detail": "Paper: paper/ dir",
+      "row": {
+        "#": "40d",
+        "Project": "EvidenceGapMap",
+        "Location": "C:\\EvidenceGapMap\\",
+        "Paper": "paper/ dir",
+        "Status": "PAUSED (no git)",
+        "Last Commit": "\u2014"
+      }
+    },
+    {
+      "id": "40",
+      "name": "MAPriors",
+      "path": "C:\\Models\\MAPriors\\",
+      "tierKey": "tier-5",
+      "tierShortName": "Tier 5",
+      "tierName": "Tier 5 \u2014 Cutting-Edge MA Trio + New Root-Level Methods (2026-03-24/25)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Paper: F1000 ready | Last Commit: 2026-03-24",
+      "row": {
+        "#": "40",
+        "Project": "MAPriors",
+        "Location": "C:\\Models\\MAPriors\\",
+        "Paper": "F1000 ready",
+        "Status": "Phase 1 complete",
+        "Last Commit": "2026-03-24"
+      }
+    },
+    {
+      "id": "38",
+      "name": "MultiverseMA",
+      "path": "C:\\Models\\MultiverseMA\\",
+      "tierKey": "tier-5",
+      "tierShortName": "Tier 5",
+      "tierName": "Tier 5 \u2014 Cutting-Edge MA Trio + New Root-Level Methods (2026-03-24/25)",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Paper: F1000 ready | Last Commit: 2026-03-24",
+      "row": {
+        "#": "38",
+        "Project": "MultiverseMA",
+        "Location": "C:\\Models\\MultiverseMA\\",
+        "Paper": "F1000 ready",
+        "Status": "Phase 1 complete",
+        "Last Commit": "2026-03-24"
+      }
+    },
+    {
+      "id": "40a",
+      "name": "OutcomeReportingBias",
+      "path": "C:\\OutcomeReportingBias\\",
+      "tierKey": "tier-5",
+      "tierShortName": "Tier 5",
+      "tierName": "Tier 5 \u2014 Cutting-Edge MA Trio + New Root-Level Methods (2026-03-24/25)",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Root-level project",
+      "detail": "Paper: RSM 233L + 3 figs + tests | Last Commit: 2026-03-25",
+      "row": {
+        "#": "40a",
+        "Project": "OutcomeReportingBias",
+        "Location": "C:\\OutcomeReportingBias\\",
+        "Paper": "RSM 233L + 3 figs + tests",
+        "Status": "SUBMISSION-READY",
+        "Last Commit": "2026-03-25"
+      }
+    },
+    {
+      "id": "40b",
+      "name": "OverlapDetector",
+      "path": "C:\\OverlapDetector\\",
+      "tierKey": "tier-5",
+      "tierShortName": "Tier 5",
+      "tierName": "Tier 5 \u2014 Cutting-Edge MA Trio + New Root-Level Methods (2026-03-24/25)",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Root-level project",
+      "detail": "Paper: RSM 190L + 3 figs + 18 tests | Last Commit: 2026-03-25",
+      "row": {
+        "#": "40b",
+        "Project": "OverlapDetector",
+        "Location": "C:\\OverlapDetector\\",
+        "Paper": "RSM 190L + 3 figs + 18 tests",
+        "Status": "SUBMISSION-READY",
+        "Last Commit": "2026-03-25"
+      }
+    },
+    {
+      "id": "40c",
+      "name": "PredictionGap",
+      "path": "C:\\PredictionGap\\",
+      "tierKey": "tier-5",
+      "tierShortName": "Tier 5",
+      "tierName": "Tier 5 \u2014 Cutting-Edge MA Trio + New Root-Level Methods (2026-03-24/25)",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Root-level project",
+      "detail": "Paper: BMJ 140L + dashboard + 21 tests + R-validated | Last Commit: 2026-03-25",
+      "row": {
+        "#": "40c",
+        "Project": "PredictionGap",
+        "Location": "C:\\PredictionGap\\",
+        "Paper": "BMJ 140L + dashboard + 21 tests + R-validated",
+        "Status": "SUBMISSION-READY",
+        "Last Commit": "2026-03-25"
+      }
+    },
+    {
+      "id": "43",
+      "name": "CochraneDataExtractor",
+      "path": "C:\\Projects\\CochraneDataExtractor\\",
+      "tierKey": "tier-6",
+      "tierShortName": "Tier 6",
+      "tierName": "Tier 6 \u2014 Infrastructure & Datasets",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "43",
+        "Project": "CochraneDataExtractor",
+        "Location": "C:\\Projects\\CochraneDataExtractor\\",
+        "Status": "Data extraction tool"
+      }
+    },
+    {
+      "id": "44",
+      "name": "Dataextractor",
+      "path": "C:\\Projects\\Dataextractor\\",
+      "tierKey": "tier-6",
+      "tierShortName": "Tier 6",
+      "tierName": "Tier 6 \u2014 Infrastructure & Datasets",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "44",
+        "Project": "Dataextractor",
+        "Location": "C:\\Projects\\Dataextractor\\",
+        "Status": "v4.9.5, 100% on 65 trials"
+      }
+    },
+    {
+      "id": "48",
+      "name": "DTA70",
+      "path": "C:\\Projects\\DTA70\\",
+      "tierKey": "tier-6",
+      "tierShortName": "Tier 6",
+      "tierName": "Tier 6 \u2014 Infrastructure & Datasets",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "48",
+        "Project": "DTA70",
+        "Location": "C:\\Projects\\DTA70\\",
+        "Status": "DTA dataset"
+      }
+    },
+    {
+      "id": "45",
+      "name": "KMcurve",
+      "path": "C:\\Projects\\KMcurve\\",
+      "tierKey": "tier-6",
+      "tierShortName": "Tier 6",
+      "tierName": "Tier 6 \u2014 Infrastructure & Datasets",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "45",
+        "Project": "KMcurve",
+        "Location": "C:\\Projects\\KMcurve\\",
+        "Status": "TrOCR neural OCR"
+      }
+    },
+    {
+      "id": "42",
+      "name": "Pairwise70",
+      "path": "C:\\Models\\Pairwise70\\",
+      "tierKey": "tier-6",
+      "tierShortName": "Tier 6",
+      "tierName": "Tier 6 \u2014 Infrastructure & Datasets",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "42",
+        "Project": "Pairwise70",
+        "Location": "C:\\Models\\Pairwise70\\",
+        "Status": "501 Cochrane reviews, needs Zenodo"
+      }
+    },
+    {
+      "id": "41",
+      "name": "RCT Extractor v2",
+      "path": "C:\\Projects\\rct-extractor-v2\\",
+      "tierKey": "tier-6",
+      "tierShortName": "Tier 6",
+      "tierName": "Tier 6 \u2014 Infrastructure & Datasets",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "41",
+        "Project": "RCT Extractor v2",
+        "Location": "C:\\Projects\\rct-extractor-v2\\",
+        "Status": "v10.3, 863 tests, 94.6% accuracy"
+      }
+    },
+    {
+      "id": "46",
+      "name": "repo100",
+      "path": "C:\\Projects\\repo100\\",
+      "tierKey": "tier-6",
+      "tierShortName": "Tier 6",
+      "tierName": "Tier 6 \u2014 Infrastructure & Datasets",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "46",
+        "Project": "repo100",
+        "Location": "C:\\Projects\\repo100\\",
+        "Status": "Dataset collection docs"
+      }
+    },
+    {
+      "id": "47",
+      "name": "repo300-ENMA-SNMA",
+      "path": "C:\\Projects\\repo300-ENMA-SNMA\\",
+      "tierKey": "tier-6",
+      "tierShortName": "Tier 6",
+      "tierName": "Tier 6 \u2014 Infrastructure & Datasets",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "47",
+        "Project": "repo300-ENMA-SNMA",
+        "Location": "C:\\Projects\\repo300-ENMA-SNMA\\",
+        "Status": "Simulation study"
+      }
+    },
+    {
+      "id": "54",
+      "name": "AutoGRADE",
+      "path": "C:\\Projects\\AutoGRADE\\",
+      "tierKey": "tier-7",
+      "tierShortName": "Tier 7",
+      "tierName": "Tier 7 \u2014 HTA Suite",
+      "status": "shipped",
+      "statusLabel": "Shipped",
+      "statusNote": "SHIPPED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "54",
+        "Project": "AutoGRADE",
+        "Location": "C:\\Projects\\AutoGRADE\\",
+        "Paper": "\u2014",
+        "Status": "SHIPPED"
+      }
+    },
+    {
+      "id": "49",
+      "name": "HTA Evidence Integrity",
+      "path": "C:\\Models\\HTA_Evidence_Integrity_Suite\\",
+      "tierKey": "tier-7",
+      "tierShortName": "Tier 7",
+      "tierName": "Tier 7 \u2014 HTA Suite",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Paper: Manuscript done",
+      "row": {
+        "#": "49",
+        "Project": "HTA Evidence Integrity",
+        "Location": "C:\\Models\\HTA_Evidence_Integrity_Suite\\",
+        "Paper": "Manuscript done",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "53",
+      "name": "HTA Oman",
+      "path": "C:\\Projects\\HTA-oman\\",
+      "tierKey": "tier-7",
+      "tierShortName": "Tier 7",
+      "tierName": "Tier 7 \u2014 HTA Suite",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "53",
+        "Project": "HTA Oman",
+        "Location": "C:\\Projects\\HTA-oman\\",
+        "Paper": "\u2014",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "50",
+      "name": "HTA Transportability",
+      "path": "C:\\Models\\HTA_Transportability_Engine\\",
+      "tierKey": "tier-7",
+      "tierShortName": "Tier 7",
+      "tierName": "Tier 7 \u2014 HTA Suite",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Paper: Manuscript done",
+      "row": {
+        "#": "50",
+        "Project": "HTA Transportability",
+        "Location": "C:\\Models\\HTA_Transportability_Engine\\",
+        "Paper": "Manuscript done",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "52",
+      "name": "HTA Unified Intel",
+      "path": "C:\\Models\\HTA_Unified_Intelligence_System\\",
+      "tierKey": "tier-7",
+      "tierShortName": "Tier 7",
+      "tierName": "Tier 7 \u2014 HTA Suite",
+      "status": "paused",
+      "statusLabel": "Paused",
+      "statusNote": "PAUSED",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "52",
+        "Project": "HTA Unified Intel",
+        "Location": "C:\\Models\\HTA_Unified_Intelligence_System\\",
+        "Paper": "\u2014",
+        "Status": "PAUSED"
+      }
+    },
+    {
+      "id": "51",
+      "name": "Value-Based HTA",
+      "path": "C:\\Models\\Value_Based_HTA_Engine\\",
+      "tierKey": "tier-7",
+      "tierShortName": "Tier 7",
+      "tierName": "Tier 7 \u2014 HTA Suite",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "SUBMISSION-READY",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Paper: Manuscript done",
+      "row": {
+        "#": "51",
+        "Project": "Value-Based HTA",
+        "Location": "C:\\Models\\Value_Based_HTA_Engine\\",
+        "Paper": "Manuscript done",
+        "Status": "SUBMISSION-READY"
+      }
+    },
+    {
+      "id": "56",
+      "name": "Fatiha Course",
+      "path": "C:\\Projects\\Fatiha-Course\\",
+      "tierKey": "tier-8",
+      "tierShortName": "Tier 8",
+      "tierName": "Tier 8 \u2014 Educational & Course Material",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "56",
+        "Project": "Fatiha Course",
+        "Location": "C:\\Projects\\Fatiha-Course\\",
+        "Status": "Large (~1.3M lines), course material"
+      }
+    },
+    {
+      "id": "57",
+      "name": "Fatiha Course v2",
+      "path": "C:\\Projects\\Fatiha-course-github-v2\\",
+      "tierKey": "tier-8",
+      "tierShortName": "Tier 8",
+      "tierName": "Tier 8 \u2014 Educational & Course Material",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "57",
+        "Project": "Fatiha Course v2",
+        "Location": "C:\\Projects\\Fatiha-course-github-v2\\",
+        "Status": "GitHub-ready version"
+      }
+    },
+    {
+      "id": "55",
+      "name": "Synthesis Course",
+      "path": "(in HTML apps or user home)",
+      "tierKey": "tier-8",
+      "tierShortName": "Tier 8",
+      "tierName": "Tier 8 \u2014 Educational & Course Material",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Course material",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "55",
+        "Project": "Synthesis Course",
+        "Location": "(in HTML apps or user home)",
+        "Status": "25 modules EN+FR, 16,760 lines"
+      }
+    },
+    {
+      "id": "59",
+      "name": "Burhan",
+      "path": "C:\\Projects\\Burhan\\",
+      "tierKey": "tier-9",
+      "tierShortName": "Tier 9",
+      "tierName": "Tier 9 \u2014 Collaborative & External",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "59",
+        "Project": "Burhan",
+        "Location": "C:\\Projects\\Burhan\\",
+        "Status": "TruthCert features"
+      }
+    },
+    {
+      "id": "60",
+      "name": "IPD Zahid",
+      "path": "C:\\Projects\\IPD Zahid\\",
+      "tierKey": "tier-9",
+      "tierShortName": "Tier 9",
+      "tierName": "Tier 9 \u2014 Collaborative & External",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "60",
+        "Project": "IPD Zahid",
+        "Location": "C:\\Projects\\IPD Zahid\\",
+        "Status": "IPD collaboration"
+      }
+    },
+    {
+      "id": "58",
+      "name": "Shahzaib ICU",
+      "path": "C:\\Models\\shahzaib-icu-landscape\\",
+      "tierKey": "tier-9",
+      "tierShortName": "Tier 9",
+      "tierName": "Tier 9 \u2014 Collaborative & External",
+      "status": "submission-ready",
+      "statusLabel": "Submission ready",
+      "statusNote": "PLOS ONE submission-ready",
+      "statusExplicit": true,
+      "type": "Model",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "58",
+        "Project": "Shahzaib ICU",
+        "Location": "C:\\Models\\shahzaib-icu-landscape\\",
+        "Status": "PLOS ONE submission-ready"
+      }
+    },
+    {
+      "id": "61",
+      "name": "WorldIPD",
+      "path": "C:\\Projects\\WorldIPD\\",
+      "tierKey": "tier-9",
+      "tierShortName": "Tier 9",
+      "tierName": "Tier 9 \u2014 Collaborative & External",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "61",
+        "Project": "WorldIPD",
+        "Location": "C:\\Projects\\WorldIPD\\",
+        "Status": "Orchestrator-based"
+      }
+    },
+    {
+      "id": "62",
+      "name": "WorldIPD-private",
+      "path": "C:\\Projects\\WorldIPD-private\\",
+      "tierKey": "tier-9",
+      "tierShortName": "Tier 9",
+      "tierName": "Tier 9 \u2014 Collaborative & External",
+      "status": "needs-triage",
+      "statusLabel": "Needs triage",
+      "statusNote": "No explicit status token found in the indexed status fields.",
+      "statusExplicit": false,
+      "type": "Project",
+      "detail": "Indexed without an additional detail column.",
+      "row": {
+        "#": "62",
+        "Project": "WorldIPD-private",
+        "Location": "C:\\Projects\\WorldIPD-private\\",
+        "Status": "Private scaffold"
+      }
+    }
+  ]
+}
