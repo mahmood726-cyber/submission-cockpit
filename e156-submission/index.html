@@ -1,271 +1,317 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>E156 Interactive Bundle</title>
-  <style>
-    :root {
-      --bg: #f5f2ea;
-      --paper: #fffdf8;
-      --ink: #1d2430;
-      --muted: #5f6b7a;
-      --line: #d8cfbf;
-      --accent: #0d6b57;
-      --accent-soft: #dcefe8;
-      --shadow: 0 18px 40px rgba(42, 47, 54, 0.08);
-      --radius: 18px;
-      --mono: "Consolas", "SFMono-Regular", "Menlo", monospace;
-      --sans: "Georgia", "Times New Roman", serif;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SubmissionCockpit: Editorial Release Control for the C Drive Research Portfolio — E156</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#FDFCFA;--text:#1a1a1a;--text2:#555;--accent:#7A5A10;
+  --card:#F5F3EE;--border:#E5E0D6;--link:#2E6B8A;
+  --s1:#2E86C1;--s2:#28B463;--s3:#7D3C98;--s4:#CB4335;
+  --s5:#D68910;--s6:#148F77;--s7:#85929E
+}
+body{
+  font-family:Georgia,'Times New Roman',serif;
+  background:var(--bg);color:var(--text);line-height:1.7;
+  -webkit-font-smoothing:antialiased;padding:0
+}
+.page{max-width:780px;margin:0 auto;padding:3rem 2rem 4rem}
 
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(13, 107, 87, 0.08), transparent 32%),
-        radial-gradient(circle at bottom right, rgba(141, 79, 45, 0.08), transparent 28%),
-        var(--bg);
-      font-family: var(--sans);
-      line-height: 1.5;
-    }
+/* ── Masthead ──────────────────────────────────── */
+.masthead{
+  text-align:center;padding:2rem 0 1.5rem;
+  border-bottom:3px double var(--border);margin-bottom:2.5rem
+}
+.masthead-label{
+  font-family:system-ui,-apple-system,sans-serif;font-size:.65rem;
+  font-weight:700;letter-spacing:.25em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:1.2rem
+}
+.masthead h1{font-size:2rem;font-weight:700;line-height:1.25;margin-bottom:.8rem}
+.masthead .byline{
+  font-family:system-ui,sans-serif;font-size:.85rem;color:var(--text2)
+}
+.masthead .byline a{color:var(--link);text-decoration:none}
 
-    .page {
-      width: min(1200px, calc(100vw - 32px));
-      margin: 32px auto 48px;
-      display: grid;
-      gap: 20px;
-    }
+/* ── Body ──────────────────────────────────────── */
+.body-section{margin-bottom:3rem}
+.body-text{
+  font-size:1.18rem;line-height:2;text-align:justify;hyphens:auto;
+  margin-bottom:1.5rem
+}
+.body-text .s{
+  cursor:pointer;transition:background .2s;border-radius:3px;padding:1px 4px;
+  position:relative
+}
+.body-text .s:hover{background:rgba(0,0,0,.06)}
+.body-text .s[data-r="1"]:hover{background:rgba(46,134,193,.12)}
+.body-text .s[data-r="2"]:hover{background:rgba(40,180,99,.12)}
+.body-text .s[data-r="3"]:hover{background:rgba(125,60,152,.12)}
+.body-text .s[data-r="4"]:hover{background:rgba(203,67,53,.15)}
+.body-text .s[data-r="5"]:hover{background:rgba(214,137,16,.12)}
+.body-text .s[data-r="6"]:hover{background:rgba(20,143,119,.12)}
+.body-text .s[data-r="7"]:hover{background:rgba(133,146,158,.12)}
+.body-text .s::after{
+  content:attr(data-label);position:absolute;bottom:calc(100% + 4px);
+  left:50%;transform:translateX(-50%);font-family:system-ui,sans-serif;
+  font-size:.6rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:#fff;padding:3px 8px;border-radius:3px;white-space:nowrap;
+  opacity:0;transition:opacity .15s;pointer-events:none;z-index:10
+}
+.body-text .s:hover::after{opacity:1}
+.body-text .s[data-r="1"]::after{background:var(--s1)}
+.body-text .s[data-r="2"]::after{background:var(--s2)}
+.body-text .s[data-r="3"]::after{background:var(--s3)}
+.body-text .s[data-r="4"]::after{background:var(--s4)}
+.body-text .s[data-r="5"]::after{background:var(--s5)}
+.body-text .s[data-r="6"]::after{background:var(--s6)}
+.body-text .s[data-r="7"]::after{background:var(--s7)}
 
-    .hero,
-    .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
+/* ── Sentence map ──────────────────────────────── */
+.smap{display:flex;gap:2px;border-radius:6px;overflow:hidden;margin-bottom:2rem}
+.smap-seg{
+  flex:1;padding:8px 4px;text-align:center;cursor:pointer;
+  color:#fff;transition:opacity .15s;font-family:system-ui,sans-serif;
+  font-size:.6rem;font-weight:700;letter-spacing:.04em
+}
+.smap-seg:hover{opacity:.8}
 
-    .hero { padding: 28px; }
-    .eyebrow {
-      color: var(--accent);
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 8px;
-    }
+/* ── Figures gallery ───────────────────────────── */
+.figures-section{margin-bottom:3rem}
+.figures-section h2{
+  font-family:system-ui,sans-serif;font-size:.7rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)
+}
+.fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.fig-card{
+  background:#fff;border:1px solid var(--border);border-radius:8px;
+  overflow:hidden;transition:box-shadow .2s
+}
+.fig-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.08)}
+.fig-card img{width:100%;height:auto;display:block}
+.fig-card .fig-caption{
+  padding:.6rem .8rem;font-family:system-ui,sans-serif;font-size:.75rem;
+  color:var(--text2);border-top:1px solid var(--border)
+}
 
-    h1 {
-      margin: 0 0 12px;
-      font-size: clamp(28px, 4vw, 42px);
-      line-height: 1.05;
-      font-weight: 700;
-    }
+/* ── App link ──────────────────────────────────── */
+.app-link-section{margin-bottom:3rem;text-align:center}
+.app-btn{
+  display:inline-block;padding:12px 32px;background:var(--accent);color:#fff;
+  font-family:system-ui,sans-serif;font-size:.9rem;font-weight:600;
+  text-decoration:none;border-radius:6px;transition:background .2s;
+  letter-spacing:.02em
+}
+.app-btn:hover{background:#6d5210}
 
-    .lede {
-      color: var(--muted);
-      max-width: 72ch;
-      margin: 0;
-    }
+/* ── Notes ─────────────────────────────────────── */
+.notes-section{
+  background:var(--card);border-radius:8px;padding:1.5rem 1.8rem;
+  margin-bottom:2.5rem
+}
+.notes-section h2{
+  font-family:system-ui,sans-serif;font-size:.7rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:1rem
+}
+.notes-grid{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem}
+.notes-grid dt{
+  font-family:system-ui,sans-serif;font-size:.82rem;font-weight:600;color:var(--text)
+}
+.notes-grid dd{font-size:.85rem;color:var(--text2)}
+.notes-grid dd a{color:var(--link);text-decoration:none;word-break:break-all}
 
-    .grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-    }
+/* ── References ────────────────────────────────── */
+.refs-section{margin-bottom:2.5rem}
+.refs-section h2{
+  font-family:system-ui,sans-serif;font-size:.7rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:.8rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)
+}
+.refs-section ol{
+  font-family:system-ui,sans-serif;font-size:.82rem;color:var(--text2);
+  padding-left:1.2rem;line-height:1.8
+}
 
-    .card { padding: 22px; }
-    .section-title {
-      margin: 0 0 14px;
-      font-size: 17px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-    }
+/* ── Disclosure ────────────────────────────────── */
+.disclosure{
+  font-family:system-ui,sans-serif;font-size:.78rem;color:var(--text2);
+  line-height:1.7;padding:1.2rem 1.5rem;background:var(--card);
+  border-radius:8px;margin-bottom:2.5rem;border-left:3px solid var(--accent)
+}
+.disclosure strong{color:var(--text);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase}
 
-    .body-text {
-      font-size: 20px;
-      line-height: 1.75;
-      margin: 0;
-    }
+/* ── Footer ────────────────────────────────────── */
+.footer{
+  padding-top:1.5rem;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem
+}
+.footer .meta{font-family:system-ui,sans-serif;font-size:.72rem;color:var(--text2)}
+.footer .meta .check{color:#28B463}
+.footer .actions{display:flex;gap:.5rem}
+.footer .actions button{
+  font-family:system-ui,sans-serif;font-size:.72rem;padding:6px 14px;
+  border:1px solid var(--border);border-radius:4px;background:#fff;
+  color:var(--text);cursor:pointer;transition:background .15s
+}
+.footer .actions button:hover{background:var(--card)}
 
-    .stats {
-      display: grid;
-      gap: 10px;
-    }
+/* ── Print ─────────────────────────────────────── */
+@media print{
+  .smap,.footer .actions,.app-link-section,.skip-link{display:none!important}
+  .s::after{display:none!important}
+  body{padding:0;background:#fff}
+  .page{max-width:100%;padding:1rem}
+  .fig-card{break-inside:avoid}
+  .fig-card img{max-height:400px;object-fit:contain}
+  .refs-section{page-break-before:auto}
+}
 
-    .stat {
-      padding: 14px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, #fff, #faf6ee);
-      border: 1px solid var(--line);
-    }
+/* ── Mobile ────────────────────────────────────── */
+@media(max-width:640px){
+  .page{padding:1.5rem 1rem}
+  .masthead h1{font-size:1.5rem}
+  .body-text{font-size:1.05rem}
+  .fig-grid{grid-template-columns:1fr}
+  .smap-seg{font-size:.5rem;padding:6px 2px}
+}
+@media(max-width:400px){
+  .page{padding:1rem .7rem}
+  .masthead h1{font-size:1.2rem}
+  .body-text{font-size:.95rem}
+}
 
-    .stat-label {
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 4px;
-    }
+/* ── Skip link ─────────────────────────────────── */
+.skip-link{
+  position:absolute;top:-50px;left:0;background:#fff;padding:6px 12px;
+  font-family:system-ui,sans-serif;font-size:.82rem;z-index:999;
+  border:1px solid var(--border);border-radius:4px
+}
+.skip-link:focus{top:8px;left:8px}
 
-    .stat-value {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    .note-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-    }
-
-    .note-item {
-      padding: 12px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--line);
-      background: #fff;
-    }
-
-    .note-item strong {
-      display: block;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .note-item a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .validation-list,
-    .study-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-
-    .validation-list td,
-    .study-table th,
-    .study-table td {
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--line);
-      vertical-align: top;
-    }
-
-    .study-table th {
-      text-align: left;
-      color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .chip {
-      display: inline-block;
-      padding: 5px 9px;
-      border-radius: 999px;
-      font-size: 12px;
-      font-weight: 700;
-      background: var(--accent-soft);
-      color: var(--accent);
-    }
-
-    .plot-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 14px;
-      background: #fff;
-    }
-
-    .plot-caption {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .json-box {
-      font-family: var(--mono);
-      font-size: 12px;
-      white-space: pre-wrap;
-      word-break: break-word;
-      background: #151b24;
-      color: #d9f5ea;
-      padding: 16px;
-      border-radius: 16px;
-      overflow: auto;
-    }
-
-    @media (max-width: 900px) {
-      .grid { grid-template-columns: 1fr; }
-      .body-text { font-size: 18px; }
-    }
-  </style>
+/* ── Reduced motion ────────────────────────────── */
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
 </head>
 <body>
-  <main class="page">
-    <section class="hero">
-      <div class="eyebrow">E156 Interactive Bundle</div>
-      <h1 id="title"></h1>
-      <p class="lede" id="lede"></p>
-    </section>
+<a href="#notes" class="skip-link">Skip to notes</a>
+<div class="page">
 
-    <section class="grid">
-      <article class="card">
-        <h2 class="section-title">Frozen Body</h2>
-        <p class="body-text" id="body"></p>
-      </article>
+  <header class="masthead">
+    <div class="masthead-label">E156 Micro-Paper</div>
+    <h1 id="title"></h1>
+    <div class="byline" id="byline"></div>
+  </header>
 
-      <aside class="card">
-        <h2 class="section-title">Core Record</h2>
-        <div class="stats" id="core-stats"></div>
-      </aside>
-    </section>
+  <section class="body-section">
+    <p class="body-text" id="body"></p>
+    <div class="smap" id="smap" role="group" aria-label="Sentence roles"></div>
+  </section>
 
-    <section class="card">
-      <h2 class="section-title">Note Block</h2>
-      <div class="note-grid" id="note-grid"></div>
-    </section>
+  <section class="figures-section" id="figures-section" style="display:none">
+    <h2>Figures</h2>
+    <div class="fig-grid" id="fig-grid"></div>
+  </section>
 
-    <section class="card">
-      <h2 class="section-title">Validation</h2>
-      <table class="validation-list" id="validation-table"></table>
-    </section>
+  <section class="app-link-section" id="app-section" style="display:none">
+    <a class="app-btn" id="app-btn" target="_blank">Open Interactive App</a>
+  </section>
 
-    <section class="card">
-      <h2 class="section-title">Primary Plot</h2>
-      <div class="plot-wrap">
-        <svg id="forest-plot" width="980" height="360" aria-label="forest plot"></svg>
-      </div>
-      <div class="plot-caption" id="plot-caption"></div>
-    </section>
+  <section class="notes-section" id="notes">
+    <h2>Outside Notes</h2>
+    <dl class="notes-grid" id="notes-grid"></dl>
+  </section>
 
-    <section class="card">
-      <h2 class="section-title">Study Table</h2>
-      <table class="study-table" id="study-table"></table>
-    </section>
+  <section class="refs-section" id="refs-section" style="display:none">
+    <h2>References</h2>
+    <ol id="refs-list"></ol>
+  </section>
 
-    <section class="card">
-      <h2 class="section-title">Embedded JSON</h2>
-      <div class="json-box" id="json-box"></div>
-    </section>
-  </main>
+  <section class="disclosure" id="disclosure" style="display:none">
+    <strong>AI Disclosure</strong><br><br>
+    <span id="disclosure-text"></span>
+  </section>
 
-  <script>
-    const E156_ARTICLE = {
+  <footer class="footer">
+    <div class="meta">
+      <span id="wc"></span> words <span class="check" id="wc-check"></span> &middot;
+      7 sentences &middot; E156 v0.2
+    </div>
+    <div class="actions">
+      <button onclick="copyBody(event)">Copy</button>
+      <button onclick="downloadJSON()">JSON</button>
+      <button onclick="window.print()">Print</button>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+const D = {
   "title": "SubmissionCockpit: Editorial Release Control for the C Drive Research Portfolio",
-  "slug": "submission-cockpit",
-  "repo_url": "https://github.com/mahmood726-cyber/submission-cockpit",
-  "author": "Mahmood Ahmad",
+  "summary": "",
+  "type": "methods",
+  "primary_estimand": "proportion of indexed projects currently carrying resolved submission-ready status",
+  "study_count": null,
+  "participant_count": null,
+  "version": "1.0",
   "date": "2026-04-01",
+  "certainty": "",
+  "app": "",
+  "data": "",
+  "code": "",
+  "doi": "",
+  "protocol": "",
+  "source_article": "",
   "body": "Can one tracker govern rewriting and publication of a multi-project E156 portfolio across GitHub and Pages? We fused current outputs from ResearchConstellation, PortfolioOps, CitationWorkbench, and AuthorshipLedger across 134 indexed projects and generated a canonical rewrite workbook for editorial tracking. SubmissionCockpit syncs portfolio metadata, manual rewrite states, MIT-license intent, GitHub and Pages delivery flags, and future Synthesis Journal upload placeholders into one publication ledger. Across 134 indexed projects, 26 carried resolved submission-ready status, a portfolio submission proportion of 19.4 percent (95% CI 12.7-26.1). Another 68 projects already had citation-readiness scores of at least 90, and 134 had draft deposit manifests available for reuse, plus public packet links, queue pages, and license recommendations. This turns the publication problem into queue management, because the remaining gaps now become explicit blockers for rewrite, packaging, release, and upload. The limitation is that cockpit review remains manual, and PDF galley upload will stay pending until journal credentials and article files are available.",
-  "word_count": 156,
-  "sentence_count": 7,
+  "validation": {
+    "status": "pass",
+    "checks": [
+      {
+        "name": "single paragraph",
+        "ok": true,
+        "detail": "Body must not contain blank-line paragraph breaks."
+      },
+      {
+        "name": "sentence count",
+        "ok": true,
+        "detail": "Found 7 sentences."
+      },
+      {
+        "name": "word count",
+        "ok": true,
+        "detail": "Found 156 words."
+      },
+      {
+        "name": "no headings",
+        "ok": true,
+        "detail": "No markdown headings allowed in body."
+      },
+      {
+        "name": "no links",
+        "ok": true,
+        "detail": "No links or DOI links allowed in body."
+      },
+      {
+        "name": "result sentence has interval",
+        "ok": true,
+        "detail": "Sentence 4 should include a quantitative result such as a percentage, count, or interval."
+      },
+      {
+        "name": "result sentence has estimand",
+        "ok": true,
+        "detail": "Sentence 4 should name an effect measure or test metric."
+      },
+      {
+        "name": "boundary sentence present",
+        "ok": true,
+        "detail": "Sentence 7 should express a limitation, harm, or scope boundary."
+      }
+    ]
+  },
   "sentences": [
     {
       "role": "Question",
@@ -296,274 +342,179 @@
       "text": "The limitation is that cockpit review remains manual, and PDF galley upload will stay pending until journal credentials and article files are available."
     }
   ],
-  "notes": {
-    "app": "SubmissionCockpit v0.1",
-    "data": "134 indexed projects merged from portfolio, operations, citation, and authorship layers plus the rewrite workbook",
-    "code": "https://github.com/mahmood726-cyber/submission-cockpit",
-    "doi": "",
-    "version": "0.1",
-    "date": "2026-04-01",
-    "certainty": "moderate",
-    "validation": "PASS",
-    "protocol": "e156-submission/protocol.md",
-    "source_article": ""
-  },
-  "type": "methods",
-  "primary_estimand": "proportion of indexed projects currently carrying resolved submission-ready status",
-  "schema": "e156-v0.2",
-  "github": "https://github.com/mahmood726-cyber/submission-cockpit"
+  "primary_plot": {},
+  "studies": [],
+  "search_strategy": {},
+  "prisma": {},
+  "included_papers": [],
+  "analysis_modules": [],
+  "author": "Mahmood Ahmad",
+  "slug": "submission-cockpit",
+  "_assets": [
+    "dashboard.html"
+  ],
+  "_disclosure": "This work represents a compiler-generated evidence micro-publication. AI is used as a constrained synthesis engine operating on structured inputs and predefined rules, rather than as an autonomous author. All results and text were reviewed and verified by the author, who takes full responsibility for the content."
 };
 
-    function el(tag, className, text) {
-      const node = document.createElement(tag);
-      if (className) node.className = className;
-      if (text !== undefined) node.textContent = text;
-      return node;
+const ROLES = [
+  {key:"question",      label:"S1 Question",      color:"#2E86C1"},
+  {key:"dataset",        label:"S2 Dataset",        color:"#28B463"},
+  {key:"method",         label:"S3 Method",         color:"#7D3C98"},
+  {key:"result",         label:"S4 Primary Result", color:"#CB4335"},
+  {key:"robustness",     label:"S5 Robustness",     color:"#D68910"},
+  {key:"interpretation", label:"S6 Interpretation", color:"#148F77"},
+  {key:"boundary",       label:"S7 Boundary",       color:"#85929E"}
+];
+
+function esc(s){const d=document.createElement("div");d.textContent=String(s??"");return d.innerHTML}
+
+// ── Title + byline ──
+document.getElementById("title").textContent = D.title || "Untitled";
+document.title = (D.title||"E156") + " \u2014 E156 Interactive Paper";
+
+const parts = [];
+if(D.author) parts.push(esc(D.author));
+if(D.affiliation) parts.push(esc(D.affiliation));
+if(D.email) parts.push('<a href="mailto:'+esc(D.email)+'">'+esc(D.email)+'</a>');
+if(D.date) parts.push(esc(D.date));
+document.getElementById("byline").innerHTML = parts.join(" &middot; ");
+
+// ── Body with sentence highlighting ──
+const body = D.body || "";
+const sents = D.sentences || [];
+const bodyEl = document.getElementById("body");
+
+if(sents.length === 7){
+  bodyEl.innerHTML = sents.map((s,i) => {
+    const txt = typeof s === "string" ? s : (s.text || "");
+    return '<span class="s" tabindex="0" role="note" aria-label="'+ROLES[i].label+'" data-r="'+(i+1)+'" data-label="'+ROLES[i].label+'">'+esc(txt)+'</span>';
+  }).join(" ");
+} else {
+  bodyEl.textContent = body;
+}
+
+// ── Sentence map ──
+const smap = document.getElementById("smap");
+ROLES.forEach((r,i) => {
+  const seg = document.createElement("div");
+  seg.className = "smap-seg";
+  seg.style.background = r.color;
+  seg.textContent = r.label.split(" ")[0];
+  seg.title = r.label;
+  seg.setAttribute("tabindex","0");
+  seg.setAttribute("role","button");
+  seg.setAttribute("aria-label",r.label);
+  const activate = () => {
+    const s = bodyEl.querySelector('.s[data-r="'+(i+1)+'"]');
+    if(s){s.scrollIntoView({behavior:"smooth",block:"center"});
+      bodyEl.querySelectorAll(".s").forEach(x=>x.style.background="");
+      const colors = ["","rgba(46,134,193,.15)","rgba(40,180,99,.15)","rgba(125,60,152,.15)",
+        "rgba(203,67,53,.18)","rgba(214,137,16,.15)","rgba(20,143,119,.15)","rgba(133,146,158,.15)"];
+      s.style.background = colors[i+1] || "";
     }
+  };
+  seg.addEventListener("click", activate);
+  seg.addEventListener("keydown", e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();activate();}});
+  smap.appendChild(seg);
+});
 
-    function appendStat(container, label, value) {
-      const card = el("div", "stat");
-      card.append(el("div", "stat-label", label));
-      card.append(el("div", "stat-value", value ?? "—"));
-      container.append(card);
-    }
+// ── Figures from assets ──
+const assets = D._assets || [];
+const imgAssets = assets.filter(a => /\.(png|jpg|jpeg|svg|gif|webp)$/i.test(a));
+if(imgAssets.length > 0){
+  document.getElementById("figures-section").style.display = "";
+  const grid = document.getElementById("fig-grid");
+  imgAssets.forEach(a => {
+    const card = document.createElement("div");
+    card.className = "fig-card";
+    const img = document.createElement("img");
+    img.src = "assets/" + a;
+    img.alt = a.replace(/[-_]/g," ").replace(/\.\w+$/,"");
+    img.loading = "lazy";
+    card.appendChild(img);
+    const cap = document.createElement("div");
+    cap.className = "fig-caption";
+    cap.textContent = a.replace(/[-_]/g," ").replace(/\.\w+$/,"");
+    card.appendChild(cap);
+    grid.appendChild(card);
+  });
+}
 
-    function renderCore(article) {
-      document.getElementById("title").textContent = article.title || "Untitled E156 record";
-      document.getElementById("lede").textContent =
-        article.summary ||
-        "A frozen 156-word body paired with a richer interactive evidence layer.";
-      document.getElementById("body").textContent = article.body || "";
+// ── App link ──
+const htmlAssets = assets.filter(a => /\.html$/i.test(a) && a !== "index.html");
+if(htmlAssets.length > 0){
+  document.getElementById("app-section").style.display = "";
+  const btn = document.getElementById("app-btn");
+  btn.href = "assets/" + htmlAssets[0];
+  btn.rel = "noopener noreferrer";
+  btn.textContent = "Open Interactive App \u2192 " + htmlAssets[0].replace(/[-_]/g," ").replace(/\.html$/,"");
+}
 
-      const core = document.getElementById("core-stats");
-      appendStat(core, "Type", article.type);
-      appendStat(core, "Primary Estimand", article.primary_estimand);
-      appendStat(core, "Studies", article.study_count);
-      appendStat(core, "Participants", article.participant_count);
-      appendStat(core, "Version", article.version);
-      appendStat(core, "Certainty", article.certainty);
-    }
+// ── Notes ──
+const notes = D.notes || {};
+const noteFields = [
+  ["Type", D.type], ["Primary Estimand", D.primary_estimand],
+  ["App", notes.app], ["Data", notes.data], ["Code", notes.code],
+  ["DOI", notes.doi], ["Version", notes.version || D.version],
+  ["Certainty", notes.certainty || D.certainty],
+  ["Validation", notes.validation || (D.validation||{}).status]
+];
+const ng = document.getElementById("notes-grid");
+noteFields.forEach(([label, val]) => {
+  if(!val) return;
+  const dt = document.createElement("dt");
+  dt.textContent = label;
+  ng.appendChild(dt);
+  const dd = document.createElement("dd");
+  if(/^https?:/.test(val)){
+    const a = document.createElement("a");
+    a.href = val; a.textContent = val; a.target = "_blank"; a.rel = "noopener";
+    dd.appendChild(a);
+  } else {
+    dd.textContent = val;
+  }
+  ng.appendChild(dd);
+});
 
-    function renderNotes(article) {
-      const fields = [
-        ["App", article.app],
-        ["Data", article.data],
-        ["Code", article.code],
-        ["DOI", article.doi],
-        ["Version", article.version],
-        ["Date", article.date],
-        ["Validation", article.validation?.status],
-        ["Protocol", article.protocol],
-        ["Source article", article.source_article]
-      ];
+// ── References ──
+const refs = D.references || [];
+if(refs.length > 0){
+  document.getElementById("refs-section").style.display = "";
+  const ol = document.getElementById("refs-list");
+  refs.forEach(r => {
+    const li = document.createElement("li");
+    li.textContent = r;
+    ol.appendChild(li);
+  });
+}
 
-      const grid = document.getElementById("note-grid");
-      fields.forEach(([label, value]) => {
-        const item = el("div", "note-item");
-        item.append(el("strong", "", label));
-        if (!value) {
-          item.append(el("div", "", "—"));
-        } else if (typeof value === "string" && /^https?:/i.test(value)) {
-          const link = el("a", "", value);
-          link.href = value;
-          link.target = "_blank";
-          link.rel = "noreferrer";
-          item.append(link);
-        } else {
-          item.append(el("div", "", String(value)));
-        }
-        grid.append(item);
-      });
-    }
+// ── Disclosure ──
+const disc = D._disclosure || "";
+if(disc){
+  document.getElementById("disclosure").style.display = "";
+  document.getElementById("disclosure-text").textContent = disc;
+}
 
-    function renderValidation(article) {
-      const table = document.getElementById("validation-table");
-      const checks = article.validation?.checks || [];
-      checks.forEach((check) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `<td><span class="chip">${check.ok ? "PASS" : "FAIL"}</span></td><td>${check.name}</td><td>${check.detail || ""}</td>`;
-        table.append(row);
-      });
-    }
+// ── Footer ──
+const wc = body.split(/\s+/).filter(Boolean).length;
+document.getElementById("wc").textContent = wc;
+document.getElementById("wc-check").textContent = wc === 156 ? "\u2713" : "\u2717 ("+wc+")";
 
-    function renderStudyTable(article) {
-      const table = document.getElementById("study-table");
-      const studies = article.studies || [];
-      table.innerHTML = `
-        <thead>
-          <tr>
-            <th>Study</th>
-            <th>Effect</th>
-            <th>Lower</th>
-            <th>Upper</th>
-            <th>Weight</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      `;
-      const tbody = table.querySelector("tbody");
-
-      if (!studies.length) {
-        const row = document.createElement("tr");
-        row.innerHTML = `<td colspan="5">No study-level rows embedded in this bundle.</td>`;
-        tbody.append(row);
-        return;
-      }
-
-      studies.forEach((study) => {
-        const row = document.createElement("tr");
-        row.innerHTML = `
-          <td>${study.label ?? ""}</td>
-          <td>${study.effect ?? ""}</td>
-          <td>${study.lower ?? ""}</td>
-          <td>${study.upper ?? ""}</td>
-          <td>${study.weight ?? ""}</td>
-        `;
-        tbody.append(row);
-      });
-    }
-
-    function drawForest(article) {
-      const svg = document.getElementById("forest-plot");
-      const width = Number(svg.getAttribute("width"));
-      const height = Number(svg.getAttribute("height"));
-      const margin = { top: 36, right: 36, bottom: 48, left: 240 };
-      const studies = article.studies || [];
-      const pooled = article.primary_plot?.pooled || null;
-      const reference = article.primary_plot?.reference ?? 1;
-
-      while (svg.firstChild) svg.removeChild(svg.firstChild);
-
-      const points = [];
-      studies.forEach((s) => {
-        if ([s.effect, s.lower, s.upper].every((v) => Number.isFinite(Number(v)))) {
-          points.push({
-            label: s.label,
-            effect: Number(s.effect),
-            lower: Number(s.lower),
-            upper: Number(s.upper),
-            pooled: false
-          });
-        }
-      });
-      if (pooled && [pooled.effect, pooled.lower, pooled.upper].every((v) => Number.isFinite(Number(v)))) {
-        points.push({
-          label: pooled.label || "Pooled",
-          effect: Number(pooled.effect),
-          lower: Number(pooled.lower),
-          upper: Number(pooled.upper),
-          pooled: true
-        });
-      }
-
-      if (!points.length) {
-        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        text.setAttribute("x", "24");
-        text.setAttribute("y", "48");
-        text.textContent = "No numeric plot data embedded.";
-        svg.append(text);
-        return;
-      }
-
-      const minX = Math.min(...points.map((p) => p.lower), reference);
-      const maxX = Math.max(...points.map((p) => p.upper), reference);
-      const plotWidth = width - margin.left - margin.right;
-      const plotHeight = height - margin.top - margin.bottom;
-      const rowGap = plotHeight / Math.max(points.length, 1);
-
-      const scale = (value) => {
-        if (maxX === minX) return margin.left + plotWidth / 2;
-        return margin.left + ((value - minX) / (maxX - minX)) * plotWidth;
-      };
-
-      const axis = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      axis.setAttribute("x1", margin.left);
-      axis.setAttribute("x2", width - margin.right);
-      axis.setAttribute("y1", height - margin.bottom);
-      axis.setAttribute("y2", height - margin.bottom);
-      axis.setAttribute("stroke", "#46505c");
-      svg.append(axis);
-
-      const ref = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      ref.setAttribute("x1", scale(reference));
-      ref.setAttribute("x2", scale(reference));
-      ref.setAttribute("y1", margin.top / 2);
-      ref.setAttribute("y2", height - margin.bottom);
-      ref.setAttribute("stroke", "#9a6a4d");
-      ref.setAttribute("stroke-dasharray", "5 5");
-      svg.append(ref);
-
-      points.forEach((point, index) => {
-        const y = margin.top + index * rowGap + rowGap / 2;
-
-        const label = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        label.setAttribute("x", "16");
-        label.setAttribute("y", String(y + 4));
-        label.setAttribute("font-size", "13");
-        label.textContent = point.label;
-        svg.append(label);
-
-        const ci = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        ci.setAttribute("x1", scale(point.lower));
-        ci.setAttribute("x2", scale(point.upper));
-        ci.setAttribute("y1", y);
-        ci.setAttribute("y2", y);
-        ci.setAttribute("stroke", point.pooled ? "#0d6b57" : "#4c5b6a");
-        ci.setAttribute("stroke-width", point.pooled ? "3" : "2");
-        svg.append(ci);
-
-        const marker = document.createElementNS("http://www.w3.org/2000/svg", "rect");
-        marker.setAttribute("x", String(scale(point.effect) - (point.pooled ? 7 : 5)));
-        marker.setAttribute("y", String(y - (point.pooled ? 7 : 5)));
-        marker.setAttribute("width", String(point.pooled ? 14 : 10));
-        marker.setAttribute("height", String(point.pooled ? 14 : 10));
-        marker.setAttribute("fill", point.pooled ? "#0d6b57" : "#223144");
-        marker.setAttribute("rx", "2");
-        svg.append(marker);
-
-        const val = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        val.setAttribute("x", String(width - margin.right + 6));
-        val.setAttribute("y", String(y + 4));
-        val.setAttribute("font-size", "12");
-        val.textContent = `${point.effect} (${point.lower}, ${point.upper})`;
-        svg.append(val);
-      });
-
-      const ticks = [minX, reference, maxX].filter((value, idx, arr) => arr.indexOf(value) === idx);
-      ticks.forEach((tick) => {
-        const tickX = scale(tick);
-        const tickLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
-        tickLine.setAttribute("x1", tickX);
-        tickLine.setAttribute("x2", tickX);
-        tickLine.setAttribute("y1", String(height - margin.bottom));
-        tickLine.setAttribute("y2", String(height - margin.bottom + 8));
-        tickLine.setAttribute("stroke", "#46505c");
-        svg.append(tickLine);
-
-        const tickText = document.createElementNS("http://www.w3.org/2000/svg", "text");
-        tickText.setAttribute("x", String(tickX));
-        tickText.setAttribute("y", String(height - margin.bottom + 24));
-        tickText.setAttribute("text-anchor", "middle");
-        tickText.setAttribute("font-size", "12");
-        tickText.textContent = Number(tick).toFixed(2);
-        svg.append(tickText);
-      });
-
-      document.getElementById("plot-caption").textContent =
-        article.primary_plot?.caption ||
-        "Primary effect plot generated from embedded numeric values.";
-    }
-
-    function renderJson(article) {
-      document.getElementById("json-box").textContent = JSON.stringify(article, null, 2);
-    }
-
-    renderCore(E156_ARTICLE);
-    renderNotes(E156_ARTICLE);
-    renderValidation(E156_ARTICLE);
-    renderStudyTable(E156_ARTICLE);
-    drawForest(E156_ARTICLE);
-    renderJson(E156_ARTICLE);
-  </script>
+// ── Actions ──
+function copyBody(e){
+  navigator.clipboard.writeText(body).then(()=>{
+    const b=e&&e.target?e.target:document.querySelector(".actions button");
+    b.textContent="Copied!";setTimeout(()=>b.textContent="Copy",1500);
+  });
+}
+function downloadJSON(){
+  const b=new Blob([JSON.stringify(D,null,2)],{type:"application/json"});
+  const u=URL.createObjectURL(b);
+  const a=document.createElement("a");
+  a.href=u;a.download=(D.slug||"e156")+".json";
+  document.body.appendChild(a);a.click();
+  document.body.removeChild(a);URL.revokeObjectURL(u);
+}
+</script>
 </body>
 </html>
