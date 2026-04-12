@@ -32,8 +32,23 @@ DATA_JSON = PROJECT_ROOT / "data.json"
 DATA_JS = PROJECT_ROOT / "data.js"
 E156_PAPER_JSON = PROJECT_ROOT / "e156-submission" / "paper.json"
 E156_INDEX_HTML = PROJECT_ROOT / "e156-submission" / "index.html"
-E156_BUILDER = USER_ROOT / "E156-framework" / "scripts" / "build_e156_bundle.py"
-EXTERNAL_E156_ROOT = Path("/mnt/c/E156")
+
+
+def preferred_existing_path(*candidates: Path) -> Path:
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return candidates[0]
+
+
+E156_BUILDER = preferred_existing_path(
+    PROJECT_ROOT.parents[1] / "E156-framework" / "scripts" / "build_e156_bundle.py",
+    Path("/mnt/c/E156-framework/scripts/build_e156_bundle.py"),
+)
+EXTERNAL_E156_ROOT = preferred_existing_path(
+    PROJECT_ROOT.parents[1] / "E156",
+    Path("/mnt/c/E156"),
+)
 EXTERNAL_WORKBOOK_SOURCE = EXTERNAL_E156_ROOT / "rewrite-workbook.txt"
 EXTERNAL_DAILY_SYNC = EXTERNAL_E156_ROOT / "scripts" / "daily_sync.bat"
 
@@ -190,8 +205,31 @@ WORKBOOK_BOUNDARY_WORDS = [
 ]
 
 
-def now_iso() -> str:
-    return datetime.now(timezone.utc).isoformat(timespec="seconds")
+def isoformat_utc_timestamp(timestamp: float) -> str:
+    return datetime.fromtimestamp(timestamp, timezone.utc).isoformat(timespec="seconds")
+
+
+def generated_at_from_paths(paths: list[Path]) -> str:
+    existing = [path for path in paths if path.exists()]
+    if not existing:
+        return datetime.now(timezone.utc).isoformat(timespec="seconds")
+    return isoformat_utc_timestamp(max(path.stat().st_mtime for path in existing))
+
+
+def build_generated_at() -> str:
+    input_paths = list(SOURCE_FILES.values())
+    input_paths.extend(
+        [
+            EXTERNAL_E156_ROOT / "audit-report.json",
+            EXTERNAL_E156_ROOT / "maintenance-report.json",
+            EXTERNAL_E156_ROOT / "verification-report.json",
+        ]
+    )
+    if TRACKER_XLSX.exists():
+        input_paths.append(TRACKER_XLSX)
+    elif TRACKER_CSV.exists():
+        input_paths.append(TRACKER_CSV)
+    return generated_at_from_paths(input_paths)
 
 
 def ensure_dirs() -> None:
@@ -204,8 +242,13 @@ def load_json(path: Path) -> dict[str, object]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def write_text_lf(path: Path, content: str) -> None:
+    with path.open("w", encoding="utf-8", newline="\n") as handle:
+        handle.write(content)
+
+
 def write_json(path: Path, payload: dict[str, object] | list[object]) -> None:
-    path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    write_text_lf(path, json.dumps(payload, indent=2) + "\n")
 
 
 def sync_snapshots() -> None:
@@ -275,10 +318,20 @@ def path_leaf(value: object) -> str:
 
 
 def windows_to_local_path(value: object) -> Path | None:
-    text = normalize_text(value).replace("/", "\\")
-    match = re.match(r"^([A-Za-z]):\\(.*)$", text)
-    if not match:
+    text = normalize_text(value)
+    if not text:
         return None
+
+    native_text = text.replace("/", "\\")
+    native_path = Path(native_text)
+    if native_path.exists():
+        return native_path
+
+    match = re.match(r"^([A-Za-z]):\\(.*)$", native_text)
+    if not match:
+        posix_path = Path(text)
+        return posix_path if posix_path.exists() else None
+
     drive = match.group(1).lower()
     remainder = match.group(2).replace("\\", "/")
     return Path(f"/mnt/{drive}/{remainder}")
@@ -954,6 +1007,8 @@ def write_tracker_json(rows: list[dict[str, str]], generated_at: str) -> None:
 def write_tracker_xlsx(rows: list[dict[str, str]]) -> None:
     if not OPENPYXL_AVAILABLE:
         return
+    if load_tracker_xlsx() == rows:
+        return
 
     workbook = Workbook()
     sheet = workbook.active
@@ -1141,7 +1196,6 @@ def build_records(
     citation: dict[str, object],
     authorship: dict[str, object],
     deposit: dict[str, object],
-    generated_at: str,
 ) -> list[dict[str, object]]:
     portfolio_by_id = build_items_by_id(portfolio["portfolio"])
     ops_by_id = build_items_by_id(ops["projects"])
@@ -1243,7 +1297,6 @@ def build_records(
             or normalize_text(citation_item.get("primaryGap"))
             or ("Not indexed in the portfolio snapshots yet" if not is_indexed_project else ""),
             "opsPrimaryAction": normalize_text(ops_item.get("primaryAction")) or ("Push GitHub + Pages release" if publish_now else ""),
-            "generatedAt": generated_at,
         }
         record["publicationScore"] = publication_score(record)
         record["pipelineStage"] = pipeline_stage(record)
@@ -1392,16 +1445,20 @@ def write_exports(records: list[dict[str, object]], dashboard: dict[str, object]
 def build_e156_index() -> None:
     if not E156_BUILDER.exists() or not E156_PAPER_JSON.exists():
         return
-    subprocess.run(
-        [sys.executable, str(E156_BUILDER), "--input", str(E156_PAPER_JSON), "--output", str(E156_INDEX_HTML)],
-        check=True,
-    )
+    try:
+        subprocess.run(
+            [sys.executable, str(E156_BUILDER), "--input", str(E156_PAPER_JSON), "--output", str(E156_INDEX_HTML)],
+            check=True,
+            timeout=30,
+        )
+    except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
+        print(f"Warning: skipping E156 index rebuild: {exc}")
 
 
 def main() -> None:
     ensure_dirs()
     sync_snapshots()
-    generated_at = now_iso()
+    generated_at = build_generated_at()
 
     portfolio = load_json(SNAPSHOT_FILES["portfolio"])
     ops = load_json(SNAPSHOT_FILES["ops"])
@@ -1474,12 +1531,12 @@ def main() -> None:
     write_tracker_json(tracker_rows, generated_at)
     write_tracker_xlsx(tracker_rows)
 
-    records = build_records(tracker_rows, portfolio, ops, citation, authorship, deposit, generated_at)
+    records = build_records(tracker_rows, portfolio, ops, citation, authorship, deposit)
     cockpit_file, dashboard = build_dashboard_payload(records, generated_at, external_e156_status)
 
     write_json(COCKPIT_JSON, cockpit_file)
     write_json(DATA_JSON, dashboard)
-    DATA_JS.write_text("window.SUBMISSION_COCKPIT_DATA = " + json.dumps(dashboard, indent=2) + ";\n", encoding="utf-8")
+    write_text_lf(DATA_JS, "window.SUBMISSION_COCKPIT_DATA = " + json.dumps(dashboard, indent=2) + ";\n")
     write_exports(records, dashboard)
     build_e156_index()
 

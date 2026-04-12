@@ -30,8 +30,8 @@
     "rewriteWorkbookSource": "C:\\E156\\rewrite-workbook.txt",
     "rewritePresent": true,
     "rewriteValid": false,
-    "rewriteWordCount": 149,
-    "rewriteSentenceCount": 8,
+    "rewriteWordCount": 152,
+    "rewriteSentenceCount": 9,
     "rewriteMatchesCurrent": false,
     "rewriteStatus": "rewriting",
     "publishNow": true,
@@ -58,7 +58,6 @@
     "queuePageUrl": "https://mahmood726-cyber.github.io/authorship-ledger/queues/overlapdetector-40b.html",
     "primaryGap": "Preserve journal target",
     "opsPrimaryAction": "Monitor and maintain",
-    "generatedAt": "2026-04-01T16:27:08+00:00",
     "publicationScore": 59,
     "pipelineStage": "Rewriting",
     "blockers": [
