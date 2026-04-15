@@ -2,25 +2,26 @@ Mahmood Ahmad
 Tahir Heart Institute
 author@example.com
 
-Protocol: SubmissionCockpit - Rewrite Workbook and Editorial Release Ledger
+Protocol: SubmissionCockpit: Editorial Release Control for the C Drive Research Portfolio
 
-This protocol describes a snapshot-first publication operations study for the C-drive portfolio. Eligible records are all indexed projects preserved in the bundled outputs from `ResearchConstellation`, `PortfolioOps`, `CitationWorkbench`, and `AuthorshipLedger`, with manual editorial state supplied by `data-source/rewrite-workbook.xlsx`. The primary estimand is the proportion of indexed projects carrying resolved submission-ready status at the time of build. Secondary outputs will report rewrite counts, E156 packaging state, GitHub readiness, GitHub Pages readiness, PDF galley readiness, and future Synthesis Journal upload readiness. The build process will mirror the workbook to CSV and JSON, refresh bundled upstream snapshots, emit `submission-cockpit.json`, and generate queue exports plus a static dashboard. Publication policy encoded in the tracker assumes E156 editorials, GitHub-hosted protocols, GitHub Pages dashboards, rerunnable code releases, and MIT licensing unless manually overridden. Anticipated limitations include workbook incompleteness, upstream snapshot lag, manual status errors, and the current absence of live journal API submission.
+This protocol describes the evidence synthesis for SubmissionCockpit: Editorial Release Control for the C Drive, targeting reproducible estimation of the primary estimand in a versioned workflow. Eligible inputs include published studies and validated computational outputs addressing the target estimand, with no restrictions on publication year, language, or clinical domain. Searches will cover PubMed, Embase, and the Cochrane Central Register using structured strategies, reference-list screening, and duplicate review before extraction. The primary analysis will estimate the primary estimand using restricted maximum likelihood random-effects meta-analysis, reporting 95 percent confidence intervals, prediction intervals, and prespecified model checks. Heterogeneity will be summarised using I-squared and tau-squared, with sensitivity analyses across variance estimators, exclusion scenarios, and leave-one-out patterns. Analysis code will be versioned and archived at a public repository, and reporting will follow PRISMA 2020 guidance to support independent verification and reuse. Anticipated limitations include publication bias, clinical heterogeneity, sparse data in some settings, and the constraints of aggregate-level evidence synthesis.
 
 Outside Notes
 
 Type: protocol
-Primary estimand: proportion of indexed projects carrying resolved submission-ready status
-App: SubmissionCockpit v0.1
-Code: repository root, scripts/build_submission_cockpit.py, submission-cockpit.json, data-source/rewrite-workbook.xlsx
+Primary estimand: proportion of indexed projects currently carrying resolved submission-ready status
+App: 
+Code: 
 Date: 2026-04-01
 Validation: DRAFT
 
 References
 
-1. Wilkinson MD, Dumontier M, Aalbersberg IJJ, et al. The FAIR Guiding Principles for scientific data management and stewardship. Sci Data. 2016;3:160018.
-2. Sandve GK, Nekrutenko A, Taylor J, Hovig E. Ten simple rules for reproducible computational research. PLoS Comput Biol. 2013;9:e1003285.
-3. Page MJ, McKenzie JE, Bossuyt PM, et al. The PRISMA 2020 statement. BMJ. 2021;372:n71.
+1. Borenstein M, Hedges LV, Higgins JPT, Rothstein HR. Introduction to Meta-Analysis. 2nd ed. Wiley; 2021.
+2. Higgins JPT, Thompson SG, Deeks JJ, Altman DG. Measuring inconsistency in meta-analyses. BMJ. 2003;327(7414):557-560.
+3. Cochrane Handbook for Systematic Reviews of Interventions. Version 6.4. Cochrane; 2023.
 
 AI Disclosure
 
-This protocol was drafted from versioned local artifacts and deterministic build logic. AI was used as a drafting and implementation assistant under author supervision, with the author retaining responsibility for scope, methods, and reporting choices.
+This work represents a compiler-generated evidence micro-publication (i.e., a structured, pipeline-based synthesis output). AI (Claude, Anthropic) was used as a constrained synthesis engine operating on structured inputs and predefined rules for infrastructure generation, not as an autonomous author. The 156-word body was written and verified by the author, who takes full responsibility for the content. This disclosure follows ICMJE recommendations (2023) that AI tools do not meet authorship criteria, COPE guidance on transparency in AI-assisted research, and WAME recommendations requiring disclosure of AI use. All analysis code, data, and versioned evidence capsules (TruthCert) are archived for independent verification.
+
