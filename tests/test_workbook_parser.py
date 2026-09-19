@@ -23,10 +23,13 @@ def _load():
 
 
 SEVEN = (
-    "Does X beat Y in adults with Z? We used 12 trials with 4,321 participants from three registries. "
-    "We pooled risk ratios with a random-effects model. The pooled risk ratio was 0.80 (95% CI 0.70 to 0.91). "
-    "Leave-one-out analysis kept the estimate between 0.78 and 0.83. This suggests a modest benefit in this population. "
-    "The evidence cannot address long-term harms because follow-up was short."
+    "Does intervention X reduce the primary composite outcome compared with Y in adults with condition Z over one year of follow-up? "
+    "We used 12 randomised trials with 4,321 participants identified from three trial registries and two bibliographic databases through March 2026. "
+    "We pooled risk ratios with a restricted maximum likelihood random-effects model and reported a Hartung-Knapp confidence interval. "
+    "The pooled risk ratio was 0.80 (95% CI 0.70 to 0.91) with moderate heterogeneity, and the prediction interval spanned 0.62 to 1.03. "
+    "Leave-one-out analysis kept the estimate between 0.78 and 0.83 and no single trial changed the direction of effect. "
+    "This suggests a modest benefit in this population that is consistent across trial size and risk of bias strata. "
+    "The evidence cannot address long-term harms because follow-up was short and adverse events were inconsistently reported."
 )
 
 
