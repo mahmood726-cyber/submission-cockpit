@@ -3,6 +3,7 @@ from __future__ import annotations
 import csv
 import importlib.util
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -252,6 +253,13 @@ def write_json(path: Path, payload: dict[str, object] | list[object]) -> None:
 
 
 def sync_snapshots() -> None:
+    if os.environ.get("SUBMISSION_COCKPIT_FROM_SNAPSHOTS") == "1":
+        # Public clones do not have the upstream machine paths; build from the
+        # bundled data-source/*.snapshot.* files instead of refusing to run.
+        missing = [str(path) for path in SNAPSHOT_FILES.values() if not path.exists()]
+        if missing:
+            raise FileNotFoundError(f"Bundled snapshot files are missing: {missing}")
+        return
     for key, source_path in SOURCE_FILES.items():
         if not source_path.exists():
             raise FileNotFoundError(f"Required upstream file is missing: {source_path}")
@@ -458,7 +466,14 @@ def parse_external_rewrite_workbook(path: Path) -> list[dict[str, object]]:
         rewrite_match = re.search(r"YOUR REWRITE \(at most 156 words, 7 sentences\):\n(.+?)$", block, re.DOTALL)
 
         current = current_match.group(1).strip() if current_match else ""
-        rewrite = rewrite_match.group(1).strip() if rewrite_match else ""
+        rewrite_raw = rewrite_match.group(1) if rewrite_match else ""
+        # The block ends with the editorial state line "SUBMITTED: [ ]" / "[x]".
+        # It is NOT part of the rewrite body. Leaving it in made every rewrite
+        # fail the 7-sentence validator (8 sentences, blank line) and made
+        # rewrite == current impossible, so 0 of 457 rewrites ever validated.
+        submitted_match = re.search(r"^\s*SUBMITTED:\s*\[(.?)\]\s*$", rewrite_raw, re.MULTILINE)
+        submitted = bool(submitted_match and submitted_match.group(1).strip().lower() == "x")
+        rewrite = re.sub(r"\n\s*SUBMITTED:\s*\[.?\].*$", "", rewrite_raw, flags=re.DOTALL).strip()
         rewrite_matches_current = bool(rewrite) and rewrite == current
         rewrite_present = bool(rewrite) and not rewrite_matches_current
         rewrite_valid, issues, word_count, sentence_count = validate_workbook_rewrite(rewrite) if rewrite_present else (False, [], 0, 0)
@@ -481,6 +496,7 @@ def parse_external_rewrite_workbook(path: Path) -> list[dict[str, object]]:
                 "rewriteWordCount": word_count,
                 "rewriteSentenceCount": sentence_count,
                 "rewriteMatchesCurrent": rewrite_matches_current,
+                "submitted": submitted,
             }
         )
 

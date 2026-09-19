@@ -97,3 +97,11 @@ The external `C:\E156` repo already contains:
 - `audit-report.json`, `verification-report.json`, and `maintenance-report.json` for health checks
 
 SubmissionCockpit snapshots those artifacts so the publication dashboard can stay aligned with the existing rewrite pipeline rather than replacing it.
+
+## Limits (read before quoting a number)
+
+- **The committed `submission-cockpit.json` (generated 2026-04-12) reports `workbookRewriteCount: 457, workbookValidRewriteCount: 0`. Both numbers are wrong.** The workbook parser captured the trailing `SUBMITTED: [ ]` state line as part of every rewrite, so each rewrite had 8 "sentences" and a blank line, and could never equal its CURRENT BODY. Re-parsed with the state line excluded (`tests/test_workbook_parser.py`), the bundled snapshot holds 469 entries: **236 real rewrites, 102 rewrites identical to the current body, 131 blank; 199 of 236 (84%) pass the 7-sentence validator; 0 marked SUBMITTED.** A rebuild from the bundled snapshots (`SUBMISSION_COCKPIT_FROM_SNAPSHOTS=1`) gives `rewrittenCount 190, workbookValidRewriteCount 190, readyForGitHubCount 1` for the 466 tracked rows; the committed artefacts have deliberately not been regenerated on this branch because the rebuild rewrites the manual tracker mirror (`data-source/rewrite-tracker.*`, `rewrite-workbook.xlsx`) wholesale.
+- **The builder cannot run from a public clone by default.** `sync_snapshots()` copies from sibling directories on the author's machine (`../ResearchConstellation`, `../PortfolioOps`, `C:\E156`) and raises if they are absent. Set `SUBMISSION_COCKPIT_FROM_SNAPSHOTS=1` to build from `data-source/*.snapshot.*` instead. Other reads of local paths (project metadata, `repo_mapping.json`) still fall back silently when absent, so an offline build is a snapshot build, not a reproduction of the author's machine.
+- **The validator's 100-word floor is this tool's choice.** The E156 contract is "exactly 7 sentences, at most 156 words"; the floor is stricter than the specification.
+- **`SUBMITTED: [x]` was never read** before this branch; the `submitted` field is now parsed but not yet wired into readiness scoring or the tracker mirror.
+- Windows paths in the data are the registry's identity field and are intentionally not portable.
